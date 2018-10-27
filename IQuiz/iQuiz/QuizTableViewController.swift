@@ -18,10 +18,10 @@ class QuizTableViewController: UITableViewController {
             "category" : "Tv Shows",
             "description" : "Test your knowledge on TV Shows!",
         ],
-        [
-            "category" : "Tyrion Lannister",
-            "description" : "Lannister",
-        ],
+//        [
+//            "category" : "Tyrion Lannister",
+//            "description" : "Lannister",
+//        ],
     ]
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,6 +31,9 @@ class QuizTableViewController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        
+        let cellNib = UINib(nibName: "QuizCatagoryTableViewCell", bundle: nil)
+        self.tableView.register(cellNib, forCellReuseIdentifier: "cell")
     }
 
     // MARK: - Table view data source
@@ -47,13 +50,14 @@ class QuizTableViewController: UITableViewController {
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! QuizCatagoryTableViewCell
 
         // Configure the cell...
-
         let charcater = quizData[indexPath.row]
         
-        cell.textLabel?.text = charcater["category"] as? String
+//        cell.catagoryLabel?.text = charcater["category"] as? String
+        cell.detailTextLabel?.text = charcater["description"] as? String
+        
         return cell
     }
     

@@ -10,6 +10,13 @@ import UIKit
 
 class QuizCatagoryTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var catagoryPic: UIImageView!
+    
+    @IBOutlet weak var catagoryLabel: UILabel!
+    
+    @IBOutlet weak var descriptionLabel: UILabel!
+    
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
