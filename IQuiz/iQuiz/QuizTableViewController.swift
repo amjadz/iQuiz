@@ -19,7 +19,7 @@ class QuizTableViewController: UITableViewController {
             "description" : "Test your knowledge on TV Shows!",
         ],
 //        [
-//            "category" : "Tyrion Lannister",
+//            "category" : "Anime ",
 //            "description" : "Lannister",
 //        ],
     ]
@@ -55,7 +55,7 @@ class QuizTableViewController: UITableViewController {
         // Configure the cell...
         let charcater = quizData[indexPath.row]
         
-//        cell.catagoryLabel?.text = charcater["category"] as? String
+        cell.catagoryLabel?.text = charcater["category"] as? String
         cell.detailTextLabel?.text = charcater["description"] as? String
         
         return cell
