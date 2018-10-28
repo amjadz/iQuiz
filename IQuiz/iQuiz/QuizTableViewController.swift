@@ -12,17 +12,17 @@ class QuizTableViewController: UITableViewController {
         [
             "picture": #imageLiteral(resourceName: "rsz_superheroes2"),
             "category" : "Superheros",
-            "description": "Test you knowlegde on superheros!",
+            "description": "Test your superhero comic knowledge!",
         ],
         [
             "picture": #imageLiteral(resourceName: "tvshow"),
             "category" : "Tv Shows",
-            "description" : "Test your knowledge on TV Shows!",
+            "description" : "Check to see your tv show knowledge!",
         ],
         [
             "picture": #imageLiteral(resourceName: "anime"),
             "category" : "Anime ",
-            "description" : "Test your knowlege about Anime!",
+            "description" : "Test your knowledge on Japense Animation!",
         ],
     ]
     override func viewDidLoad() {
@@ -66,6 +66,16 @@ class QuizTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 171.0
     }
+    
+    @IBAction func alertButton(_ sender: UIBarButtonItem) {
+       let alert =  UIAlertController.init(title: "Settings", message: "Settings will be coming soon!", preferredStyle: .alert)
+        
+        alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+        
+        self.present(alert, animated: true, completion: nil)
+    }
+    
+    
     
 
     /*
