@@ -5,23 +5,25 @@
 //  Created by Zubair Amjad on 10/27/18.
 //  Copyright © 2018 Zubair Amjad. All rights reserved.
 //
-
 import UIKit
 
 class QuizTableViewController: UITableViewController {
     var quizData:[Dictionary<String, Any>] = [
         [
-            "category" : "SuperHeros",
+            "picture": #imageLiteral(resourceName: "rsz_superheroes2"),
+            "category" : "Superheros",
             "description": "Test you knowlegde on superheros!",
         ],
         [
+            "picture": #imageLiteral(resourceName: "tvshow"),
             "category" : "Tv Shows",
             "description" : "Test your knowledge on TV Shows!",
         ],
-//        [
-//            "category" : "Anime ",
-//            "description" : "Lannister",
-//        ],
+        [
+            "picture": #imageLiteral(resourceName: "anime"),
+            "category" : "Anime ",
+            "description" : "Test your knowlege about Anime!",
+        ],
     ]
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -52,13 +54,17 @@ class QuizTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! QuizCatagoryTableViewCell
 
-        // Configure the cell...
         let charcater = quizData[indexPath.row]
         
         cell.catagoryLabel?.text = charcater["category"] as? String
-        cell.detailTextLabel?.text = charcater["description"] as? String
+        cell.descriptionLabel?.text = charcater["description"] as? String
+        cell.catagoryPic?.image = charcater["picture"] as? UIImage
         
         return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 171.0
     }
     
 
