@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5879B3722188111E007D85DB /* TvShowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5879B3712188111E007D85DB /* TvShowViewController.swift */; };
+		5879B37421881151007D85DB /* AnimeQuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5879B37321881151007D85DB /* AnimeQuestionViewController.swift */; };
+		5879B3762188116A007D85DB /* SuperHeroQuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5879B3752188116A007D85DB /* SuperHeroQuestionViewController.swift */; };
 		58C53DBF218401190042E2E4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58C53DBE218401190042E2E4 /* AppDelegate.swift */; };
 		58C53DC4218401190042E2E4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 58C53DC2218401190042E2E4 /* Main.storyboard */; };
 		58C53DC62184011A0042E2E4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 58C53DC52184011A0042E2E4 /* Assets.xcassets */; };
@@ -17,6 +20,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5879B3712188111E007D85DB /* TvShowViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TvShowViewController.swift; sourceTree = "<group>"; };
+		5879B37321881151007D85DB /* AnimeQuestionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimeQuestionViewController.swift; sourceTree = "<group>"; };
+		5879B3752188116A007D85DB /* SuperHeroQuestionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuperHeroQuestionViewController.swift; sourceTree = "<group>"; };
 		58C53DBB218401190042E2E4 /* iQuiz.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iQuiz.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		58C53DBE218401190042E2E4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		58C53DC3218401190042E2E4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -39,6 +45,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5879B370218810B2007D85DB /* QuizQuestions */ = {
+			isa = PBXGroup;
+			children = (
+				5879B3712188111E007D85DB /* TvShowViewController.swift */,
+				5879B37321881151007D85DB /* AnimeQuestionViewController.swift */,
+				5879B3752188116A007D85DB /* SuperHeroQuestionViewController.swift */,
+			);
+			path = QuizQuestions;
+			sourceTree = "<group>";
+		};
 		58C53DB2218401190042E2E4 = {
 			isa = PBXGroup;
 			children = (
@@ -58,6 +74,7 @@
 		58C53DBD218401190042E2E4 /* iQuiz */ = {
 			isa = PBXGroup;
 			children = (
+				5879B370218810B2007D85DB /* QuizQuestions */,
 				58C53DD8218512DA0042E2E4 /* QuizCatagory */,
 				58C53DBE218401190042E2E4 /* AppDelegate.swift */,
 				58C53DC2218401190042E2E4 /* Main.storyboard */,
@@ -152,7 +169,10 @@
 			files = (
 				58C53DD6218512C70042E2E4 /* QuizCatagoryTableViewCell.swift in Sources */,
 				58C53DD1218506180042E2E4 /* QuizTableViewController.swift in Sources */,
+				5879B3762188116A007D85DB /* SuperHeroQuestionViewController.swift in Sources */,
+				5879B37421881151007D85DB /* AnimeQuestionViewController.swift in Sources */,
 				58C53DBF218401190042E2E4 /* AppDelegate.swift in Sources */,
+				5879B3722188111E007D85DB /* TvShowViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
