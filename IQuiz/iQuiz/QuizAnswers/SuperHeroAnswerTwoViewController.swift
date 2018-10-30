@@ -1,5 +1,5 @@
 //
-//  TvShowViewController.swift
+//  QuizSuperHeroAnswerTwoViewController.swift
 //  iQuiz
 //
 //  Created by Zubair Amjad on 10/29/18.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class TvShowViewController: UIViewController {
+class SuperHeroAnswerTwoViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

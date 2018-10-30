@@ -1,5 +1,5 @@
 //
-//  SuperHeroQuestionViewController.swift
+//  QuizSuperHeroResultViewController.swift
 //  iQuiz
 //
 //  Created by Zubair Amjad on 10/29/18.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SuperHeroQuestionViewController: UIViewController {
+class SuperHeroResultViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
