@@ -18,7 +18,6 @@
 		58C53DC92184011A0042E2E4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 58C53DC72184011A0042E2E4 /* LaunchScreen.storyboard */; };
 		58C53DD1218506180042E2E4 /* QuizTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58C53DD0218506180042E2E4 /* QuizTableViewController.swift */; };
 		58C53DD6218512C70042E2E4 /* QuizCatagoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58C53DD4218512C70042E2E4 /* QuizCatagoryTableViewCell.swift */; };
-		58C53DD7218512C70042E2E4 /* QuizCatagoryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 58C53DD5218512C70042E2E4 /* QuizCatagoryTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,7 +34,6 @@
 		58C53DCA2184011A0042E2E4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		58C53DD0218506180042E2E4 /* QuizTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizTableViewController.swift; sourceTree = "<group>"; };
 		58C53DD4218512C70042E2E4 /* QuizCatagoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizCatagoryTableViewCell.swift; sourceTree = "<group>"; };
-		58C53DD5218512C70042E2E4 /* QuizCatagoryTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = QuizCatagoryTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,7 +118,6 @@
 			isa = PBXGroup;
 			children = (
 				58C53DD4218512C70042E2E4 /* QuizCatagoryTableViewCell.swift */,
-				58C53DD5218512C70042E2E4 /* QuizCatagoryTableViewCell.xib */,
 			);
 			path = QuizCatagory;
 			sourceTree = "<group>";
@@ -183,7 +180,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				58C53DD7218512C70042E2E4 /* QuizCatagoryTableViewCell.xib in Resources */,
 				58C53DC92184011A0042E2E4 /* LaunchScreen.storyboard in Resources */,
 				58C53DC62184011A0042E2E4 /* Assets.xcassets in Resources */,
 				58C53DC4218401190042E2E4 /* Main.storyboard in Resources */,

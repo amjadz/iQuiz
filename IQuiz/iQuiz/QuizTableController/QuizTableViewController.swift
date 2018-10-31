@@ -8,7 +8,10 @@
 import UIKit
 
 class QuizTableViewController: UITableViewController {
-    var quizData:[Dictionary<String, Any>] = [
+    
+    
+    var quizData = [
+        
         [
             "picture": #imageLiteral(resourceName: "rsz_superheroes2"),
             "category" : "Superheros",
@@ -24,7 +27,30 @@ class QuizTableViewController: UITableViewController {
             "category" : "Anime ",
             "description" : "Test your knowledge on Japense Animation!",
         ],
+        
     ]
+    
+    var questionData : [[String: String]] = [
+     [
+        "title": "Who is spiderman",
+        "answerOne": "Placeholder",
+        "answerTwo": "Placeholder",
+        "answerThree": "Placeholder",
+        "answerFour": "Placeholder"
+    
+        ],
+        [
+        "title": "Who is spiderman",
+        "answerOne": "Placeholder",
+        "answerTwo": "Placeholder",
+        "answerThree": "Placeholder",
+        "answerFour": "Placeholder"
+        ]
+    ]
+    
+    var questionOneVC :  SuperHeroQuestionOneViewController?
+    var questionTwoVC :  SuperHeroAnswerOneViewController?
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -34,9 +60,12 @@ class QuizTableViewController: UITableViewController {
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
         
-        let cellNib = UINib(nibName: "QuizCatagoryTableViewCell", bundle: nil)
-        self.tableView.register(cellNib, forCellReuseIdentifier: "cell")
+        // Get Reference to VC Quiz question
+        
+        questionOneVC = storyboard!.instantiateViewController(withIdentifier:"questionOne") as? SuperHeroQuestionOneViewController
+        
     }
+
 
     // MARK: - Table view data source
 
@@ -73,6 +102,26 @@ class QuizTableViewController: UITableViewController {
         alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
         
         self.present(alert, animated: true, completion: nil)
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print(indexPath.row)
+        
+        guard let questionOneVC = questionOneVC else {
+            return
+        }
+
+        let _ = questionOneVC.view
+        
+        if case indexPath.row = 0 {
+        questionOneVC.questionOne.text = questionData[indexPath.row]["title"]
+        
+        } else if case indexPath.row = 1{
+            questionOneVC.questionOne.text = questionData[indexPath.row]["title"]
+            
+        }
+        self.present(questionOneVC, animated: true, completion: nil)
+        
     }
     
     
