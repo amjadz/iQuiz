@@ -7,11 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		5879B3762188116A007D85DB /* SuperHeroQuestionOneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5879B3752188116A007D85DB /* SuperHeroQuestionOneViewController.swift */; };
-		5879B37B21882CAD007D85DB /* SuperHeroAnswerOneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5879B37A21882CAD007D85DB /* SuperHeroAnswerOneViewController.swift */; };
-		5879B37D21882CD3007D85DB /* SuperHeroAnswerTwoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5879B37C21882CD3007D85DB /* SuperHeroAnswerTwoViewController.swift */; };
-		5879B37F21882CF3007D85DB /* SuperHeroResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5879B37E21882CF3007D85DB /* SuperHeroResultViewController.swift */; };
-		5879B38121882D15007D85DB /* SuperHeroQuestionTwoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5879B38021882D15007D85DB /* SuperHeroQuestionTwoViewController.swift */; };
+		5862CDA5218A3AF300523972 /* QuizResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5862CDA4218A3AF300523972 /* QuizResultViewController.swift */; };
+		5879B3762188116A007D85DB /* QuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5879B3752188116A007D85DB /* QuestionViewController.swift */; };
+		5879B37B21882CAD007D85DB /* AnswerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5879B37A21882CAD007D85DB /* AnswerViewController.swift */; };
 		58C53DBF218401190042E2E4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58C53DBE218401190042E2E4 /* AppDelegate.swift */; };
 		58C53DC4218401190042E2E4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 58C53DC2218401190042E2E4 /* Main.storyboard */; };
 		58C53DC62184011A0042E2E4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 58C53DC52184011A0042E2E4 /* Assets.xcassets */; };
@@ -21,11 +19,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		5879B3752188116A007D85DB /* SuperHeroQuestionOneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuperHeroQuestionOneViewController.swift; sourceTree = "<group>"; };
-		5879B37A21882CAD007D85DB /* SuperHeroAnswerOneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuperHeroAnswerOneViewController.swift; sourceTree = "<group>"; };
-		5879B37C21882CD3007D85DB /* SuperHeroAnswerTwoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuperHeroAnswerTwoViewController.swift; sourceTree = "<group>"; };
-		5879B37E21882CF3007D85DB /* SuperHeroResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuperHeroResultViewController.swift; sourceTree = "<group>"; };
-		5879B38021882D15007D85DB /* SuperHeroQuestionTwoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuperHeroQuestionTwoViewController.swift; sourceTree = "<group>"; };
+		5862CDA4218A3AF300523972 /* QuizResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizResultViewController.swift; sourceTree = "<group>"; };
+		5879B3752188116A007D85DB /* QuestionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionViewController.swift; sourceTree = "<group>"; };
+		5879B37A21882CAD007D85DB /* AnswerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnswerViewController.swift; sourceTree = "<group>"; };
 		58C53DBB218401190042E2E4 /* iQuiz.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iQuiz.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		58C53DBE218401190042E2E4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		58C53DC3218401190042E2E4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -50,8 +46,7 @@
 		5879B370218810B2007D85DB /* QuizQuestions */ = {
 			isa = PBXGroup;
 			children = (
-				5879B3752188116A007D85DB /* SuperHeroQuestionOneViewController.swift */,
-				5879B38021882D15007D85DB /* SuperHeroQuestionTwoViewController.swift */,
+				5879B3752188116A007D85DB /* QuestionViewController.swift */,
 			);
 			path = QuizQuestions;
 			sourceTree = "<group>";
@@ -59,8 +54,7 @@
 		5879B37821882BBE007D85DB /* QuizAnswers */ = {
 			isa = PBXGroup;
 			children = (
-				5879B37A21882CAD007D85DB /* SuperHeroAnswerOneViewController.swift */,
-				5879B37C21882CD3007D85DB /* SuperHeroAnswerTwoViewController.swift */,
+				5879B37A21882CAD007D85DB /* AnswerViewController.swift */,
 			);
 			path = QuizAnswers;
 			sourceTree = "<group>";
@@ -68,7 +62,7 @@
 		5879B37921882C18007D85DB /* QuizResult */ = {
 			isa = PBXGroup;
 			children = (
-				5879B37E21882CF3007D85DB /* SuperHeroResultViewController.swift */,
+				5862CDA4218A3AF300523972 /* QuizResultViewController.swift */,
 			);
 			path = QuizResult;
 			sourceTree = "<group>";
@@ -195,11 +189,9 @@
 			files = (
 				58C53DD6218512C70042E2E4 /* QuizCatagoryTableViewCell.swift in Sources */,
 				58C53DD1218506180042E2E4 /* QuizTableViewController.swift in Sources */,
-				5879B37F21882CF3007D85DB /* SuperHeroResultViewController.swift in Sources */,
-				5879B37B21882CAD007D85DB /* SuperHeroAnswerOneViewController.swift in Sources */,
-				5879B3762188116A007D85DB /* SuperHeroQuestionOneViewController.swift in Sources */,
-				5879B37D21882CD3007D85DB /* SuperHeroAnswerTwoViewController.swift in Sources */,
-				5879B38121882D15007D85DB /* SuperHeroQuestionTwoViewController.swift in Sources */,
+				5862CDA5218A3AF300523972 /* QuizResultViewController.swift in Sources */,
+				5879B37B21882CAD007D85DB /* AnswerViewController.swift in Sources */,
+				5879B3762188116A007D85DB /* QuestionViewController.swift in Sources */,
 				58C53DBF218401190042E2E4 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

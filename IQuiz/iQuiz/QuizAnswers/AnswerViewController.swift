@@ -1,5 +1,5 @@
 //
-//  QuizSuperHeroResultViewController.swift
+//  QuizSuperHeroAnswerOneViewController.swift
 //  iQuiz
 //
 //  Created by Zubair Amjad on 10/29/18.
@@ -8,12 +8,20 @@
 
 import UIKit
 
-class SuperHeroResultViewController: UIViewController {
+class SuperHeroAnswerOneViewController: UIViewController {
 
+    
+   
+    
+    
+    @IBOutlet weak var answerLabel: UILabel!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
+        
     }
     
 

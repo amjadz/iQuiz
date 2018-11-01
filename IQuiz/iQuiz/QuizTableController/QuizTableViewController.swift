@@ -33,24 +33,30 @@ class QuizTableViewController: UITableViewController {
     var questionData : [[String: String]] = [
      [
         "title": "Who is spiderman",
-        "answerOne": "Placeholder",
-        "answerTwo": "Placeholder",
-        "answerThree": "Placeholder",
-        "answerFour": "Placeholder"
+        "answerOne": "Peter",
+        "answerTwo": "Logan",
+        "answerThree": "Reeds",
+        "answerFour": "Stan"
     
         ],
         [
-        "title": "Who is spiderman",
-        "answerOne": "Placeholder",
-        "answerTwo": "Placeholder",
-        "answerThree": "Placeholder",
-        "answerFour": "Placeholder"
+        "titleTopicTwo": "Where does Game of Thrones take place?",
+        "answerOneTopicTwo": "Placeholder",
+        "answerTwoTopicTwo": "Placeholder",
+        "answerThreeTwoTopicTwo": "Placeholder",
+        "answerFourTopicTwo": "Placeholder"
+        ],
+        [
+        "titleTopicThree": "What anime is Midorya from?",
+        "answerOneTopicThree": "Placeholder",
+        "answerTwoTopicThree": "Placeholder",
+        "answerThreeTwoTopicThree": "Placeholder",
+        "answerFourTopicThree": "Placeholder"
         ]
     ]
     
-    var questionOneVC :  SuperHeroQuestionOneViewController?
-    var questionTwoVC :  SuperHeroAnswerOneViewController?
-
+    var questionVC :  SuperHeroQuestionOneViewController?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -62,7 +68,7 @@ class QuizTableViewController: UITableViewController {
         
         // Get Reference to VC Quiz question
         
-        questionOneVC = storyboard!.instantiateViewController(withIdentifier:"questionOne") as? SuperHeroQuestionOneViewController
+        questionVC = storyboard!.instantiateViewController(withIdentifier:"questionOne") as? SuperHeroQuestionOneViewController
         
     }
 
@@ -93,7 +99,7 @@ class QuizTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 171.0
+        return 172.0
     }
     
     @IBAction func alertButton(_ sender: UIBarButtonItem) {
@@ -107,21 +113,34 @@ class QuizTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print(indexPath.row)
         
-        guard let questionOneVC = questionOneVC else {
+        guard let questionVC = questionVC else {
             return
         }
 
-        let _ = questionOneVC.view
+        let _ = questionVC.view
         
         if case indexPath.row = 0 {
-        questionOneVC.questionOne.text = questionData[indexPath.row]["title"]
-        
-        } else if case indexPath.row = 1{
-            questionOneVC.questionOne.text = questionData[indexPath.row]["title"]
+            
+        questionVC.questionOne.text = questionData[indexPath.row]["title"]
+            
+        questionVC.responeOne.setTitle(questionData[indexPath.row]["answerOne"], for: .normal)
+            
+        questionVC.responseTwo.setTitle(questionData[indexPath.row]["answerTwo"], for: .normal)
+            
+        questionVC.responseThree.setTitle(questionData[indexPath.row]["answerThree"], for: .normal)
+            
+        questionVC.responseFour.setTitle(questionData[indexPath.row]["answerFour"], for: .normal)
             
         }
-        self.present(questionOneVC, animated: true, completion: nil)
+        else if case indexPath.row = 1 {
+            questionVC.questionOne.text = questionData[indexPath.row]["titleTopicTwo"]
+            
+        } else if case indexPath.row = 2 {
+            questionVC.questionOne.text = questionData[indexPath.row]["titleTopicThree"]
+            
+        } 
         
+        self.present(questionVC, animated: true, completion: nil)
     }
     
     
