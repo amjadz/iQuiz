@@ -27,35 +27,10 @@ class QuizTableViewController: UITableViewController {
             "category" : "Anime ",
             "description" : "Test your knowledge on Japense Animation!",
         ],
-        
     ]
     
-    var questionData : [[String: String]] = [
-     [
-        "title": "Who is spiderman",
-        "answerOne": "Peter",
-        "answerTwo": "Logan",
-        "answerThree": "Reeds",
-        "answerFour": "Stan"
     
-        ],
-        [
-        "titleTopicTwo": "Where does Game of Thrones take place?",
-        "answerOneTopicTwo": "Placeholder",
-        "answerTwoTopicTwo": "Placeholder",
-        "answerThreeTwoTopicTwo": "Placeholder",
-        "answerFourTopicTwo": "Placeholder"
-        ],
-        [
-        "titleTopicThree": "What anime is Midorya from?",
-        "answerOneTopicThree": "Placeholder",
-        "answerTwoTopicThree": "Placeholder",
-        "answerThreeTwoTopicThree": "Placeholder",
-        "answerFourTopicThree": "Placeholder"
-        ]
-    ]
-    
-    var questionVC :  SuperHeroQuestionOneViewController?
+    var questionVC : QuestionViewController?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -68,7 +43,7 @@ class QuizTableViewController: UITableViewController {
         
         // Get Reference to VC Quiz question
         
-        questionVC = storyboard!.instantiateViewController(withIdentifier:"questionOne") as? SuperHeroQuestionOneViewController
+        questionVC = storyboard!.instantiateViewController(withIdentifier:"question") as? QuestionViewController
         
     }
 
@@ -111,8 +86,6 @@ class QuizTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print(indexPath.row)
-        
         guard let questionVC = questionVC else {
             return
         }
@@ -121,31 +94,26 @@ class QuizTableViewController: UITableViewController {
         
         if case indexPath.row = 0 {
             
-        questionVC.questionOne.text = questionData[indexPath.row]["title"]
-            
-        questionVC.responeOne.setTitle(questionData[indexPath.row]["answerOne"], for: .normal)
-            
-        questionVC.responseTwo.setTitle(questionData[indexPath.row]["answerTwo"], for: .normal)
-            
-        questionVC.responseThree.setTitle(questionData[indexPath.row]["answerThree"], for: .normal)
-            
-        questionVC.responseFour.setTitle(questionData[indexPath.row]["answerFour"], for: .normal)
+            questionVC.questionOne.text = QuizQuestions.questionData[indexPath.row]["title"]
+            questionVC.responeOne.setTitle(QuizQuestions.questionData[indexPath.row]["answerOne"], for: .normal)
+            questionVC.responseTwo.setTitle(QuizQuestions.questionData[indexPath.row]["answerTwo"], for: .normal)
+            questionVC.responseThree.setTitle(QuizQuestions.questionData[indexPath.row]["answerThree"], for: .normal)
+            questionVC.responseFour.setTitle(QuizQuestions.questionData[indexPath.row]["answerFour"], for: .normal)
             
         }
         else if case indexPath.row = 1 {
-            questionVC.questionOne.text = questionData[indexPath.row]["titleTopicTwo"]
+            questionVC.questionOne.text = QuizQuestions.questionData[indexPath.row]["titleTopicTwo"]
             
         } else if case indexPath.row = 2 {
-            questionVC.questionOne.text = questionData[indexPath.row]["titleTopicThree"]
+            questionVC.questionOne.text = QuizQuestions.questionData[indexPath.row]["titleTopicThree"]
             
         } 
         
         self.present(questionVC, animated: true, completion: nil)
+        
+        
     }
     
-    
-    
-
     /*
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
@@ -178,16 +146,6 @@ class QuizTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
         // Return false if you do not want the item to be re-orderable.
         return true
-    }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
     }
     */
 

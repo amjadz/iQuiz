@@ -8,31 +8,43 @@
 
 import UIKit
 
-class SuperHeroAnswerOneViewController: UIViewController {
+class AnswerViewController: UIViewController {
 
-    
-   
-    
+    @IBAction func goToQuestions2(_ sender: Any) {
+        if let questionVC2 = storyboard!.instantiateViewController(withIdentifier:"question") as? QuestionViewController {
+            
+            if questionNum != nil  {
+                questionNum = questionNum! + 1
+            }
+            
+            if questionNum == 1 {
+                let _ = questionVC2.view
+                
+                self.present(questionVC2, animated: true, completion: nil)
+                
+            } else {
+                if let resultVC = storyboard!.instantiateViewController(withIdentifier: "result") as? QuizResultViewController {
+                    self.present(resultVC, animated: true, completion: nil)
+                
+                }
+            }
+        }
+    }
     
     @IBOutlet weak var answerLabel: UILabel!
-    
+    var correctAnswer = 0
+    var questionVC2: QuestionViewController?
+    var questionNum: Int?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Do any additional setup after loading the view.
+        answerLabel.text = ""
         
+        questionNum = 1
+      
+
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

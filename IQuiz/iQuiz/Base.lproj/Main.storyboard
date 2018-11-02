@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Hmg-my-hQZ">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Hmg-my-hQZ">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -18,7 +18,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <toolbar key="tableHeaderView" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="CCy-Of-ldn">
-                            <rect key="frame" x="0.0" y="292" width="83" height="44"/>
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                             <items>
                                 <barButtonItem title="Settings" id="JzJ-RE-q5l">
@@ -86,10 +86,10 @@
             </objects>
             <point key="canvasLocation" x="84" y="146.17691154422789"/>
         </scene>
-        <!--Super Hero Question One View Controller-->
+        <!--Question View Controller-->
         <scene sceneID="UNs-MK-AYf">
             <objects>
-                <viewController storyboardIdentifier="questionOne" id="mJe-Cb-Fsf" customClass="SuperHeroQuestionOneViewController" customModule="iQuiz" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="question" id="mJe-Cb-Fsf" customClass="QuestionViewController" customModule="iQuiz" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="xdt-gc-dI5">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -133,7 +133,7 @@
                                 <state key="normal" title="Submit"/>
                                 <connections>
                                     <action selector="submitAnswer:" destination="mJe-Cb-Fsf" eventType="touchUpInside" id="1vU-mA-gSM"/>
-                                    <segue destination="j2O-NJ-xDl" kind="show" id="zVA-QJ-9I2"/>
+                                    <segue destination="j2O-NJ-xDl" kind="show" identifier="theAnswer" id="o4c-kG-XzZ"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -180,10 +180,10 @@
             </objects>
             <point key="canvasLocation" x="948" y="144"/>
         </scene>
-        <!--Super Hero Answer One View Controller-->
+        <!--Answer View Controller-->
         <scene sceneID="Cdy-Tu-0Ck">
             <objects>
-                <viewController id="j2O-NJ-xDl" customClass="SuperHeroAnswerOneViewController" customModule="iQuiz" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="j2O-NJ-xDl" customClass="AnswerViewController" customModule="iQuiz" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="DNZ-Jk-KJ3">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -200,7 +200,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Next"/>
                                 <connections>
-                                    <segue destination="dr5-vt-lgX" kind="show" id="02Y-Vm-sxD"/>
+                                    <action selector="goToQuestions2:" destination="j2O-NJ-xDl" eventType="touchUpInside" id="TQg-DR-B2x"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Answer" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PsH-yi-CeK">
@@ -220,76 +220,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qWF-RN-AjL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1797.5999999999999" y="144.3778110944528"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="3vd-AQ-bXJ">
-            <objects>
-                <viewController id="dr5-vt-lgX" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="tVp-If-1XG">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Who is Wolverine?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vbW-3e-U2e">
-                                <rect key="frame" x="43" y="82" width="289" height="41"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="35"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yqB-LI-I2x">
-                                <rect key="frame" x="114" y="239" width="46" height="30"/>
-                                <state key="normal" title="Button"/>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CaN-Bb-B37">
-                                <rect key="frame" x="214" y="239" width="46" height="30"/>
-                                <state key="normal" title="Button"/>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pq2-ug-cWa">
-                                <rect key="frame" x="214" y="325" width="46" height="30"/>
-                                <state key="normal" title="Button"/>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bIh-qg-pXo">
-                                <rect key="frame" x="114" y="325" width="46" height="30"/>
-                                <state key="normal" title="Button"/>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5tw-4O-Voa">
-                                <rect key="frame" x="163" y="410" width="49" height="30"/>
-                                <state key="normal" title="Submit"/>
-                                <connections>
-                                    <segue destination="RTR-YE-jgE" kind="show" id="gzc-Hb-8Xs"/>
-                                </connections>
-                            </button>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstItem="yqB-LI-I2x" firstAttribute="leading" secondItem="OtH-lW-XVq" secondAttribute="leading" constant="114" id="9j5-kj-r1G"/>
-                            <constraint firstItem="OtH-lW-XVq" firstAttribute="bottom" secondItem="5tw-4O-Voa" secondAttribute="bottom" constant="227" id="D8b-1Q-ian"/>
-                            <constraint firstItem="OtH-lW-XVq" firstAttribute="trailing" secondItem="5tw-4O-Voa" secondAttribute="trailing" constant="163" id="HFv-HN-pjW"/>
-                            <constraint firstItem="bIh-qg-pXo" firstAttribute="top" secondItem="vbW-3e-U2e" secondAttribute="bottom" constant="202" id="LBM-3S-VC5"/>
-                            <constraint firstItem="vbW-3e-U2e" firstAttribute="leading" secondItem="OtH-lW-XVq" secondAttribute="leading" constant="43" id="U60-QS-bqn"/>
-                            <constraint firstItem="bIh-qg-pXo" firstAttribute="leading" secondItem="OtH-lW-XVq" secondAttribute="leading" constant="114" id="cxj-P7-vUe"/>
-                            <constraint firstItem="yqB-LI-I2x" firstAttribute="top" secondItem="vbW-3e-U2e" secondAttribute="bottom" constant="116" id="do6-WY-EiP"/>
-                            <constraint firstItem="OtH-lW-XVq" firstAttribute="trailing" secondItem="CaN-Bb-B37" secondAttribute="trailing" constant="115" id="fQm-9m-1Ug"/>
-                            <constraint firstItem="Pq2-ug-cWa" firstAttribute="top" secondItem="vbW-3e-U2e" secondAttribute="bottom" constant="202" id="fiT-PD-uVR"/>
-                            <constraint firstItem="5tw-4O-Voa" firstAttribute="leading" secondItem="OtH-lW-XVq" secondAttribute="leading" constant="163" id="fnT-7S-kmo"/>
-                            <constraint firstItem="vbW-3e-U2e" firstAttribute="top" secondItem="OtH-lW-XVq" secondAttribute="top" constant="62" id="hKc-ye-OgP"/>
-                            <constraint firstItem="OtH-lW-XVq" firstAttribute="trailing" secondItem="Pq2-ug-cWa" secondAttribute="trailing" constant="115" id="opy-6C-zLW"/>
-                            <constraint firstItem="OtH-lW-XVq" firstAttribute="trailing" secondItem="vbW-3e-U2e" secondAttribute="trailing" constant="43" id="pTr-Xv-Ua8"/>
-                            <constraint firstItem="5tw-4O-Voa" firstAttribute="leading" secondItem="bIh-qg-pXo" secondAttribute="trailing" constant="3" id="wIZ-HO-XL9"/>
-                            <constraint firstItem="CaN-Bb-B37" firstAttribute="top" secondItem="vbW-3e-U2e" secondAttribute="bottom" constant="116" id="x4u-BB-Cs2"/>
-                            <constraint firstItem="Pq2-ug-cWa" firstAttribute="leading" secondItem="5tw-4O-Voa" secondAttribute="trailing" constant="2" id="xDj-5Z-SCs"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="OtH-lW-XVq"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="4nq-wq-KPz" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2621.5999999999999" y="144.3778110944528"/>
+            <point key="canvasLocation" x="998" y="-690"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="m4I-Cu-7YG">
             <objects>
-                <viewController id="RTR-YE-jgE" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="result" id="RTR-YE-jgE" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="9eK-4B-HZc">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -316,7 +252,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mev-bm-bZk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="84" y="886"/>
+            <point key="canvasLocation" x="84" y="-689"/>
         </scene>
     </scenes>
 </document>

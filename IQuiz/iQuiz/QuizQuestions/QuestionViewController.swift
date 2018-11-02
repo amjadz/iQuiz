@@ -8,25 +8,21 @@
 
 import UIKit
 
-class SuperHeroQuestionOneViewController: UIViewController {
+class QuestionViewController: UIViewController {
 
     @IBOutlet weak var questionOne: UILabel!
-    
-    
+
     @IBOutlet weak var responeOne: UIButton!
-    
     
     @IBOutlet weak var responseTwo: UIButton!
     
-    
     @IBOutlet weak var responseThree: UIButton!
-    
     
     @IBOutlet weak var responseFour: UIButton!
     
     var correctAnswer = 0
     var questionSelect = 0
-
+    var questionNum: Int? = nil
     
     @IBAction func responseOne(_ sender: Any) {
         questionSelect = 1
@@ -69,12 +65,17 @@ class SuperHeroQuestionOneViewController: UIViewController {
     
     
     @IBAction func submitAnswer(_ sender: Any) {
-        if questionSelect == 4 {
+        if questionSelect == 1 {
             correctAnswer += 1
+            performSegue(withIdentifier: "theAnswer", sender: self)
+
             
         } else {
+            performSegue(withIdentifier: "theAnswer", sender: self)
+
             correctAnswer += 0
         }
+        
         
     }
     
@@ -86,9 +87,12 @@ class SuperHeroQuestionOneViewController: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "" {
-            
-            
+        if segue.identifier == "theAnswer" {
+            if let dest = segue.destination as? AnswerViewController{
+                dest.answerLabel?.text = responeOne.titleLabel?.text
+                dest.questionNum = questionNum
+                
+            }
             
         }
     }
