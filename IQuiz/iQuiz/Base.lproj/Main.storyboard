@@ -222,10 +222,10 @@
             </objects>
             <point key="canvasLocation" x="998" y="-690"/>
         </scene>
-        <!--View Controller-->
+        <!--Quiz Result View Controller-->
         <scene sceneID="m4I-Cu-7YG">
             <objects>
-                <viewController storyboardIdentifier="result" id="RTR-YE-jgE" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="result" id="RTR-YE-jgE" customClass="QuizResultViewController" customModule="iQuiz" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="9eK-4B-HZc">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

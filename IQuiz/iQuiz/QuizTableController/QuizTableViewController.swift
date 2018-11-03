@@ -109,6 +109,7 @@ class QuizTableViewController: UITableViewController {
             
         } 
         
+        questionVC.questionNum = 1
         self.present(questionVC, animated: true, completion: nil)
         
         

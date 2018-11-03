@@ -42,7 +42,6 @@ class QuestionViewController: UIViewController {
         
     }
     
-    
     @IBAction func responseThree(_ sender: Any) {
         questionSelect = 3
         self.responseThree.tintColor = #colorLiteral(red: 0.4392156899, green: 0.01176470611, blue: 0.1921568662, alpha: 1)
@@ -52,31 +51,24 @@ class QuestionViewController: UIViewController {
         
     }
     
-    
     @IBAction func responseFour(_ sender: Any) {
         questionSelect = 4
         self.responseFour.tintColor = #colorLiteral(red: 0.4392156899, green: 0.01176470611, blue: 0.1921568662, alpha: 1)
         responeOne.tintColor = #colorLiteral(red: 0, green: 0.4784313725, blue: 1, alpha: 1)
         responseThree.tintColor = #colorLiteral(red: 0, green: 0.4784313725, blue: 1, alpha: 1)
         responseTwo.tintColor = #colorLiteral(red: 0, green: 0.4784313725, blue: 1, alpha: 1)
-        
 
     }
-    
     
     @IBAction func submitAnswer(_ sender: Any) {
         if questionSelect == 1 {
             correctAnswer += 1
             performSegue(withIdentifier: "theAnswer", sender: self)
-
             
         } else {
             performSegue(withIdentifier: "theAnswer", sender: self)
-
             correctAnswer += 0
         }
-        
-        
     }
     
 
