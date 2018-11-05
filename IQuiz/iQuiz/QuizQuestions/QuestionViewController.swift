@@ -71,7 +71,6 @@ class QuestionViewController: UIViewController {
         }
     }
     
-
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -83,10 +82,8 @@ class QuestionViewController: UIViewController {
             if let dest = segue.destination as? AnswerViewController{
                 dest.answerLabel?.text = responeOne.titleLabel?.text
                 dest.questionNum = questionNum
-                
+                dest.correctAnswer = correctAnswer
             }
-            
         }
     }
-    
 }

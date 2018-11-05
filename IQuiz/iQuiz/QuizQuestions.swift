@@ -35,10 +35,13 @@ class QuizQuestions {
             "answerTwoTopicThree": "Placeholder",
             "answerThreeTwoTopicThree": "Placeholder",
             "answerFourTopicThree": "Placeholder"
+        ],
+        [
+            "titleTopicFour": "Lit",
+            "answerOneTopicThree": "Placeholder",
+            "answerTwoTopicThree": "Placeholder",
+            "answerThreeTwoTopicThree": "Placeholder",
+            "answerFourTopicThree": "Placeholder"
         ]
     ]
-
-    
-    
-    
 }

@@ -19,17 +19,19 @@ class AnswerViewController: UIViewController {
                 if questionNum != nil {
                     questionNum = questionNum! + 1
                     questionVC2.questionNum = questionNum
-                    print(questionNum)
-
                 }
                 
+            
                 self.present(questionVC2, animated: true, completion: nil)
                 
             } else {
                 if let resultVC = storyboard!.instantiateViewController(withIdentifier: "result") as? QuizResultViewController {
                     let _ = resultVC.view
                     
+                    
+//                    resultVC.scoreLabel.text = correctAnswer as String
                     self.present(resultVC, animated: true, completion: nil)
+                    
                 
                 }
             }
