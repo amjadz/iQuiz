@@ -89,9 +89,10 @@ class QuizTableViewController: UITableViewController {
         guard let questionVC = questionVC else {
             return
         }
-
+        
         let _ = questionVC.view
         
+
         if case indexPath.row = 0 {
             
             questionVC.questionOne.text = QuizQuestions.questionData[indexPath.row]["title"]
@@ -110,6 +111,8 @@ class QuizTableViewController: UITableViewController {
         } 
         
         questionVC.questionNum = 1
+        questionVC.index = indexPath.row 
+        
         self.present(questionVC, animated: true, completion: nil)
         
         

@@ -18,7 +18,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <toolbar key="tableHeaderView" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="CCy-Of-ldn">
-                            <rect key="frame" x="0.0" y="322" width="92" height="44"/>
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                             <items>
                                 <barButtonItem title="Settings" id="JzJ-RE-q5l">
@@ -132,7 +132,15 @@
                                 <rect key="frame" x="116" y="341" width="183" height="30"/>
                                 <state key="normal" title="Button"/>
                                 <connections>
+                                    <action selector="submitAnswer:" destination="mJe-Cb-Fsf" eventType="touchUpInside" id="Vuq-6x-GW0"/>
                                     <segue destination="j2O-NJ-xDl" kind="show" identifier="theAnswer" id="MKT-32-EdX"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Txh-DN-uDZ">
+                                <rect key="frame" x="26" y="20" width="34" height="30"/>
+                                <state key="normal" title="Back"/>
+                                <connections>
+                                    <segue destination="Hmg-my-hQZ" kind="show" id="vQ3-nd-xAX"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -141,7 +149,9 @@
                             <constraint firstItem="Vrt-Da-b68" firstAttribute="top" secondItem="tIq-Gr-Q6P" secondAttribute="bottom" constant="87" id="8G4-uv-qVJ"/>
                             <constraint firstItem="tIq-Gr-Q6P" firstAttribute="top" secondItem="F8e-A2-Wwe" secondAttribute="top" constant="60" id="Ae2-pt-dhY"/>
                             <constraint firstItem="ZY8-qY-PF9" firstAttribute="top" secondItem="Vrt-Da-b68" secondAttribute="bottom" constant="48" id="Hs9-f9-2HR"/>
+                            <constraint firstItem="Txh-DN-uDZ" firstAttribute="leading" secondItem="F8e-A2-Wwe" secondAttribute="leading" constant="26" id="Ndp-SH-WKS"/>
                             <constraint firstItem="gxo-ue-C5E" firstAttribute="leading" secondItem="F8e-A2-Wwe" secondAttribute="leading" constant="116" id="Z1a-uM-8el"/>
+                            <constraint firstItem="tIq-Gr-Q6P" firstAttribute="top" secondItem="Txh-DN-uDZ" secondAttribute="bottom" constant="30" id="aE7-Hi-XLU"/>
                             <constraint firstItem="Vrt-Da-b68" firstAttribute="leading" secondItem="F8e-A2-Wwe" secondAttribute="leading" constant="128" id="cJe-es-JT5"/>
                             <constraint firstItem="ZY8-qY-PF9" firstAttribute="leading" secondItem="F8e-A2-Wwe" secondAttribute="leading" constant="128" id="fB4-VT-o3l"/>
                             <constraint firstItem="Vht-re-4JC" firstAttribute="top" secondItem="77S-vQ-lNv" secondAttribute="bottom" constant="48" id="ft6-oJ-JIp"/>
@@ -194,13 +204,22 @@
                                     <action selector="goToQuestions2:" destination="j2O-NJ-xDl" eventType="touchUpInside" id="TQg-DR-B2x"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JD8-Rx-QrY">
+                                <rect key="frame" x="21" y="20" width="34" height="30"/>
+                                <state key="normal" title="Back"/>
+                                <connections>
+                                    <segue destination="Hmg-my-hQZ" kind="show" id="MOm-2P-Ndf"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="8yd-tv-N28" firstAttribute="leading" secondItem="3pt-Th-tvn" secondAttribute="leading" constant="171" id="0hC-NP-dHR"/>
+                            <constraint firstItem="JD8-Rx-QrY" firstAttribute="leading" secondItem="3pt-Th-tvn" secondAttribute="leading" constant="21" id="9FK-Ob-BgW"/>
                             <constraint firstItem="3pt-Th-tvn" firstAttribute="trailing" secondItem="Zl7-FL-7uv" secondAttribute="trailing" constant="34" id="AkV-0f-jjD"/>
                             <constraint firstItem="8yd-tv-N28" firstAttribute="top" secondItem="PsH-yi-CeK" secondAttribute="bottom" constant="91" id="M0y-84-hLa"/>
                             <constraint firstItem="Zl7-FL-7uv" firstAttribute="leading" secondItem="3pt-Th-tvn" secondAttribute="leading" constant="34" id="Nw9-ck-HWt"/>
+                            <constraint firstItem="Zl7-FL-7uv" firstAttribute="top" secondItem="JD8-Rx-QrY" secondAttribute="bottom" constant="29" id="PnB-00-SnE"/>
                             <constraint firstItem="3pt-Th-tvn" firstAttribute="trailing" secondItem="PsH-yi-CeK" secondAttribute="trailing" constant="159" id="aYw-0W-e9C"/>
                             <constraint firstItem="Zl7-FL-7uv" firstAttribute="top" secondItem="3pt-Th-tvn" secondAttribute="top" constant="59" id="ccP-Pg-ANa"/>
                             <constraint firstItem="3pt-Th-tvn" firstAttribute="trailing" secondItem="8yd-tv-N28" secondAttribute="trailing" constant="172" id="eFl-0y-EBH"/>
@@ -238,6 +257,14 @@
                                     <segue destination="Hmg-my-hQZ" kind="show" id="uLN-vE-g9H"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cLf-ez-nSy">
+                                <rect key="frame" x="20" y="20" width="63" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Back"/>
+                                <connections>
+                                    <segue destination="Hmg-my-hQZ" kind="show" id="SRi-w6-V0c"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -260,4 +287,7 @@
             <point key="canvasLocation" x="84" y="-689.5052473763119"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="SRi-w6-V0c"/>
+    </inferredMetricsTieBreakers>
 </document>

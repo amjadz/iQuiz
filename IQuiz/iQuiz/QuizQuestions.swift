@@ -19,29 +19,45 @@ class QuizQuestions {
             "answerOne": "Peter",
             "answerTwo": "Logan",
             "answerThree": "Reeds",
-            "answerFour": "Stan"
+            "answerFour": "Stan",
+            
+            "titleQuestion2": "Lit",
+            "answerOneQuestion2": "Placeholder",
+            "answerTwoQuestion2": "Placeholder",
+            "answerThreeQuestion2": "Placeholder",
+            "answerFourQuestion2": "Placeholder"
+            
             
         ],
         [
-            "titleTopicTwo": "Where does Game of Thrones take place?",
-            "answerOneTopicTwo": "Placeholder",
-            "answerTwoTopicTwo": "Placeholder",
-            "answerThreeTwoTopicTwo": "Placeholder",
-            "answerFourTopicTwo": "Placeholder"
+            "title": "Where does Game of Thrones take place?",
+            "answerOne": "Placeholder",
+            "answerTwo": "Placeholder",
+            "answerThree": "Placeholder",
+            "answerFour": "Placeholder",
+            
+            "titleQuestion2": "Lit",
+            "answerOneQuestion2": "Placeholder",
+            "answerTwoQuestion2": "Placeholder",
+            "answerThreeQuestion2": "Placeholder",
+            "answerFourQuestion2": "Placeholder"
+            
         ],
         [
-            "titleTopicThree": "What anime is Midorya from?",
-            "answerOneTopicThree": "Placeholder",
-            "answerTwoTopicThree": "Placeholder",
-            "answerThreeTwoTopicThree": "Placeholder",
-            "answerFourTopicThree": "Placeholder"
-        ],
-        [
-            "titleTopicFour": "Lit",
-            "answerOneTopicThree": "Placeholder",
-            "answerTwoTopicThree": "Placeholder",
-            "answerThreeTwoTopicThree": "Placeholder",
-            "answerFourTopicThree": "Placeholder"
+            "title": "What anime is Midorya from?",
+            "answerOne": "Placeholder",
+            "answerTwo": "Placeholder",
+            "answerThree": "Placeholder",
+            "answerFour": "Placeholder",
+            
+            "titleQuestion2": "Lit",
+            "answerOneQuestion2": "Placeholder",
+            "answerTwoQuestion2": "Placeholder",
+            "answerThreeQuestion2": "Placeholder",
+            "answerFourQuestion2": "Placeholder"
+            
         ]
+        
     ]
+    
 }

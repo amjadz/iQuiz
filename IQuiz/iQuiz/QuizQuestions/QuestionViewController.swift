@@ -9,7 +9,9 @@
 import UIKit
 
 class QuestionViewController: UIViewController {
-
+    
+    var index: Int?
+    
     @IBOutlet weak var questionOne: UILabel!
 
     @IBOutlet weak var responeOne: UIButton!
@@ -22,7 +24,7 @@ class QuestionViewController: UIViewController {
     
     var correctAnswer = 0
     var questionSelect = 0
-    var questionNum: Int? = nil
+    var questionNum: Int?
     
     @IBAction func responseOne(_ sender: Any) {
         questionSelect = 1
@@ -83,6 +85,8 @@ class QuestionViewController: UIViewController {
                 dest.answerLabel?.text = responeOne.titleLabel?.text
                 dest.questionNum = questionNum
                 dest.correctAnswer = correctAnswer
+                dest.questionSelect = questionSelect
+                dest.index = index
             }
         }
     }
