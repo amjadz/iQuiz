@@ -15,46 +15,46 @@ import Foundation
 class QuizQuestions {
     static var questionData : [[String: String]] = [
         [
-            "title": "Who is spiderman",
+            "title": "Who is spiderman?",
             "answerOne": "Peter",
             "answerTwo": "Logan",
             "answerThree": "Reeds",
             "answerFour": "Stan",
             
-            "titleQuestion2": "Lit",
-            "answerOneQuestion2": "Placeholder",
-            "answerTwoQuestion2": "Placeholder",
-            "answerThreeQuestion2": "Placeholder",
-            "answerFourQuestion2": "Placeholder"
+            "titleQuestion2": "Who is wolverine?",
+            "answerOneQuestion2": "Logan",
+            "answerTwoQuestion2": "Peter",
+            "answerThreeQuestion2": "Reeds",
+            "answerFourQuestion2": "Stan"
             
             
         ],
         [
             "title": "Where does Game of Thrones take place?",
-            "answerOne": "Placeholder",
-            "answerTwo": "Placeholder",
-            "answerThree": "Placeholder",
-            "answerFour": "Placeholder",
+            "answerOne": "New Zeland",
+            "answerTwo": "Australia",
+            "answerThree": "America",
+            "answerFour": "India",
             
-            "titleQuestion2": "Lit",
-            "answerOneQuestion2": "Placeholder",
-            "answerTwoQuestion2": "Placeholder",
-            "answerThreeQuestion2": "Placeholder",
-            "answerFourQuestion2": "Placeholder"
+            "titleQuestion2": "Where does Breaking Bad take place?",
+            "answerOneQuestion2": "America",
+            "answerTwoQuestion2": "Australia",
+            "answerThreeQuestion2": "India",
+            "answerFourQuestion2": "Jamica"
             
         ],
         [
             "title": "What anime is Midorya from?",
-            "answerOne": "Placeholder",
-            "answerTwo": "Placeholder",
-            "answerThree": "Placeholder",
-            "answerFour": "Placeholder",
+            "answerOne": "My Hero Acadima",
+            "answerTwo": "Ghoul",
+            "answerThree": "DBZ",
+            "answerFour": "Captain",
             
-            "titleQuestion2": "Lit",
-            "answerOneQuestion2": "Placeholder",
-            "answerTwoQuestion2": "Placeholder",
-            "answerThreeQuestion2": "Placeholder",
-            "answerFourQuestion2": "Placeholder"
+            "titleQuestion2": "Where is goku from?",
+            "answerOneQuestion2": "DBZ",
+            "answerTwoQuestion2": "Captain",
+            "answerThreeQuestion2": "Ghoul",
+            "answerFourQuestion2": "Hero"
             
         ]
         

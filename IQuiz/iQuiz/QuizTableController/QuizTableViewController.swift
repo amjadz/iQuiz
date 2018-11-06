@@ -92,23 +92,13 @@ class QuizTableViewController: UITableViewController {
         
         let _ = questionVC.view
         
-
-        if case indexPath.row = 0 {
-            
-            questionVC.questionOne.text = QuizQuestions.questionData[indexPath.row]["title"]
-            questionVC.responeOne.setTitle(QuizQuestions.questionData[indexPath.row]["answerOne"], for: .normal)
-            questionVC.responseTwo.setTitle(QuizQuestions.questionData[indexPath.row]["answerTwo"], for: .normal)
-            questionVC.responseThree.setTitle(QuizQuestions.questionData[indexPath.row]["answerThree"], for: .normal)
-            questionVC.responseFour.setTitle(QuizQuestions.questionData[indexPath.row]["answerFour"], for: .normal)
-            
-        }
-        else if case indexPath.row = 1 {
-            questionVC.questionOne.text = QuizQuestions.questionData[indexPath.row]["titleTopicTwo"]
-            
-        } else if case indexPath.row = 2 {
-            questionVC.questionOne.text = QuizQuestions.questionData[indexPath.row]["titleTopicThree"]
-            
-        } 
+        questionVC.questionOne.text = QuizQuestions.questionData[indexPath.row]["title"]
+        questionVC.responeOne.setTitle(QuizQuestions.questionData[indexPath.row]["answerOne"], for: .normal)
+        questionVC.responseTwo.setTitle(QuizQuestions.questionData[indexPath.row]["answerTwo"], for: .normal)
+        questionVC.responseThree.setTitle(QuizQuestions.questionData[indexPath.row]["answerThree"], for: .normal)
+        questionVC.responseFour.setTitle(QuizQuestions.questionData[indexPath.row]["answerFour"], for: .normal)
+        
+        
         
         questionVC.questionNum = 1
         questionVC.index = indexPath.row 

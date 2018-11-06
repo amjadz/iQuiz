@@ -15,9 +15,7 @@ class AnswerViewController: UIViewController {
     
     
     @IBAction func goToQuestions2(_ sender: Any) {
-        print(QuizQuestions.questionData[index!])
-
-        print(index)
+        
         if let questionVC2 = storyboard!.instantiateViewController(withIdentifier:"question") as? QuestionViewController {
             
             if questionNum == 1 {
@@ -32,6 +30,10 @@ class AnswerViewController: UIViewController {
                     questionVC2.questionNum = questionNum! + 1
                     questionVC2.index = index
                     questionVC2.questionOne.text = QuizQuestions.questionData[index]["titleQuestion2"]
+                    questionVC2.responeOne.setTitle(QuizQuestions.questionData[index]["answerOneQuestion2"], for: .normal)
+                    questionVC2.responseTwo.setTitle(QuizQuestions.questionData[index]["answerTwoQuestion2"], for: .normal)
+                    questionVC2.responseThree.setTitle(QuizQuestions.questionData[index]["answerThreeQuestion2"], for: .normal)
+                    questionVC2.responseFour.setTitle(QuizQuestions.questionData[index]["answerFourQuestion2"], for: .normal)
                     
                 }
             
