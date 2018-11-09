@@ -13,13 +13,9 @@ class QuestionViewController: UIViewController {
     var index: Int?
     
     @IBOutlet weak var questionOne: UILabel!
-
     @IBOutlet weak var responeOne: UIButton!
-    
     @IBOutlet weak var responseTwo: UIButton!
-    
     @IBOutlet weak var responseThree: UIButton!
-    
     @IBOutlet weak var responseFour: UIButton!
     
     var correctAnswer = 0
@@ -64,11 +60,14 @@ class QuestionViewController: UIViewController {
     
     @IBAction func submitAnswer(_ sender: Any) {
         if questionSelect == 1 {
+    
             correctAnswer += 1
+            
             performSegue(withIdentifier: "theAnswer", sender: self)
             
         } else {
             performSegue(withIdentifier: "theAnswer", sender: self)
+        
             correctAnswer += 0
         }
     }
@@ -83,6 +82,7 @@ class QuestionViewController: UIViewController {
         if segue.identifier == "theAnswer" {
             if let dest = segue.destination as? AnswerViewController{
                 dest.answerLabel?.text = responeOne.titleLabel?.text
+                dest.question?.text = questionOne?.text
                 dest.questionNum = questionNum
                 dest.correctAnswer = correctAnswer
                 dest.questionSelect = questionSelect

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		584C528C21950F54009BA652 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 584C528B21950F54009BA652 /* Models.swift */; };
 		5862CDA5218A3AF300523972 /* QuizResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5862CDA4218A3AF300523972 /* QuizResultViewController.swift */; };
 		5879B3762188116A007D85DB /* QuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5879B3752188116A007D85DB /* QuestionViewController.swift */; };
 		5879B37B21882CAD007D85DB /* AnswerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5879B37A21882CAD007D85DB /* AnswerViewController.swift */; };
@@ -17,9 +18,11 @@
 		58C53DC92184011A0042E2E4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 58C53DC72184011A0042E2E4 /* LaunchScreen.storyboard */; };
 		58C53DD1218506180042E2E4 /* QuizTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58C53DD0218506180042E2E4 /* QuizTableViewController.swift */; };
 		58C53DD6218512C70042E2E4 /* QuizCatagoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58C53DD4218512C70042E2E4 /* QuizCatagoryTableViewCell.swift */; };
+		887B8787DB4E95FE50F0BAD4 /* Pods_iQuiz.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E329CAB2DEC99CBB82CF8A07 /* Pods_iQuiz.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		584C528B21950F54009BA652 /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
 		5862CDA4218A3AF300523972 /* QuizResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizResultViewController.swift; sourceTree = "<group>"; };
 		5879B3752188116A007D85DB /* QuestionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionViewController.swift; sourceTree = "<group>"; };
 		5879B37A21882CAD007D85DB /* AnswerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnswerViewController.swift; sourceTree = "<group>"; };
@@ -32,6 +35,9 @@
 		58C53DCA2184011A0042E2E4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		58C53DD0218506180042E2E4 /* QuizTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizTableViewController.swift; sourceTree = "<group>"; };
 		58C53DD4218512C70042E2E4 /* QuizCatagoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizCatagoryTableViewCell.swift; sourceTree = "<group>"; };
+		6AC3265893709E3BBEF2B2FF /* Pods-iQuiz.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iQuiz.release.xcconfig"; path = "Pods/Target Support Files/Pods-iQuiz/Pods-iQuiz.release.xcconfig"; sourceTree = "<group>"; };
+		E0C5B14B34DB440602F8DD71 /* Pods-iQuiz.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iQuiz.debug.xcconfig"; path = "Pods/Target Support Files/Pods-iQuiz/Pods-iQuiz.debug.xcconfig"; sourceTree = "<group>"; };
+		E329CAB2DEC99CBB82CF8A07 /* Pods_iQuiz.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iQuiz.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -39,12 +45,21 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				887B8787DB4E95FE50F0BAD4 /* Pods_iQuiz.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		584C528A21950F40009BA652 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				584C528B21950F54009BA652 /* Models.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		5879B370218810B2007D85DB /* QuizQuestions */ = {
 			isa = PBXGroup;
 			children = (
@@ -82,6 +97,8 @@
 			children = (
 				58C53DBD218401190042E2E4 /* iQuiz */,
 				58C53DBC218401190042E2E4 /* Products */,
+				D8FD608CD86C26A5A821AFC8 /* Frameworks */,
+				C8F7A8B3EDC8A964D3B94D41 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -96,6 +113,7 @@
 		58C53DBD218401190042E2E4 /* iQuiz */ = {
 			isa = PBXGroup;
 			children = (
+				584C528A21950F40009BA652 /* Models */,
 				5879B38221882D33007D85DB /* QuizTableController */,
 				5879B37921882C18007D85DB /* QuizResult */,
 				5879B37821882BBE007D85DB /* QuizAnswers */,
@@ -119,6 +137,23 @@
 			path = QuizCatagory;
 			sourceTree = "<group>";
 		};
+		C8F7A8B3EDC8A964D3B94D41 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				E0C5B14B34DB440602F8DD71 /* Pods-iQuiz.debug.xcconfig */,
+				6AC3265893709E3BBEF2B2FF /* Pods-iQuiz.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		D8FD608CD86C26A5A821AFC8 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E329CAB2DEC99CBB82CF8A07 /* Pods_iQuiz.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -126,9 +161,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 58C53DCD2184011A0042E2E4 /* Build configuration list for PBXNativeTarget "iQuiz" */;
 			buildPhases = (
+				A77B45F36A3709C1F24C0BA8 /* [CP] Check Pods Manifest.lock */,
 				58C53DB7218401190042E2E4 /* Sources */,
 				58C53DB8218401190042E2E4 /* Frameworks */,
 				58C53DB9218401190042E2E4 /* Resources */,
+				178B6D5B631EC0CCC6D22492 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -185,6 +222,55 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		178B6D5B631EC0CCC6D22492 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-iQuiz/Pods-iQuiz-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-iQuiz/Pods-iQuiz-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A77B45F36A3709C1F24C0BA8 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-iQuiz-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		58C53DB7218401190042E2E4 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -193,6 +279,7 @@
 				58C53DD6218512C70042E2E4 /* QuizCatagoryTableViewCell.swift in Sources */,
 				58C53DD1218506180042E2E4 /* QuizTableViewController.swift in Sources */,
 				58A7E033218C0CB000055E32 /* QuizQuestions.swift in Sources */,
+				584C528C21950F54009BA652 /* Models.swift in Sources */,
 				5862CDA5218A3AF300523972 /* QuizResultViewController.swift in Sources */,
 				5879B37B21882CAD007D85DB /* AnswerViewController.swift in Sources */,
 				5879B3762188116A007D85DB /* QuestionViewController.swift in Sources */,
@@ -340,6 +427,7 @@
 		};
 		58C53DCE2184011A0042E2E4 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E0C5B14B34DB440602F8DD71 /* Pods-iQuiz.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -358,6 +446,7 @@
 		};
 		58C53DCF2184011A0042E2E4 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6AC3265893709E3BBEF2B2FF /* Pods-iQuiz.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

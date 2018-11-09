@@ -11,7 +11,6 @@
 import Foundation
 
 // Singleton for managing QuizData 
-
 class QuizQuestions {
     static var questionData : [[String: String]] = [
         [
@@ -45,7 +44,7 @@ class QuizQuestions {
         ],
         [
             "title": "What anime is Midorya from?",
-            "answerOne": "My Hero Acadima",
+            "answerOne": "Hero",
             "answerTwo": "Ghoul",
             "answerThree": "DBZ",
             "answerFour": "Captain",

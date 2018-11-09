@@ -16,7 +16,6 @@ class QuizResultViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        
         scoreLabel.text = string
         
         
