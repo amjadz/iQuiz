@@ -61,14 +61,14 @@ class QuestionViewController: UIViewController {
     @IBAction func submitAnswer(_ sender: Any) {
         if questionSelect == 1 {
     
-            correctAnswer += 1
+            correctAnswer = correctAnswer + 1
             
             performSegue(withIdentifier: "theAnswer", sender: self)
             
         } else {
             performSegue(withIdentifier: "theAnswer", sender: self)
         
-            correctAnswer += 0
+            correctAnswer = correctAnswer + 0
         }
     }
     

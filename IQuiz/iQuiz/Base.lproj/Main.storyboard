@@ -228,17 +228,26 @@
                                     <segue destination="Hmg-my-hQZ" kind="show" id="MOm-2P-Ndf"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You got it right!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dsH-kQ-dRu">
+                                <rect key="frame" x="60" y="213" width="294" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="8yd-tv-N28" firstAttribute="leading" secondItem="3pt-Th-tvn" secondAttribute="leading" constant="171" id="0hC-NP-dHR"/>
+                            <constraint firstItem="dsH-kQ-dRu" firstAttribute="leading" secondItem="3pt-Th-tvn" secondAttribute="leading" constant="60" id="5tG-0v-rqr"/>
                             <constraint firstItem="JD8-Rx-QrY" firstAttribute="leading" secondItem="3pt-Th-tvn" secondAttribute="leading" constant="21" id="9FK-Ob-BgW"/>
                             <constraint firstItem="3pt-Th-tvn" firstAttribute="trailing" secondItem="Zl7-FL-7uv" secondAttribute="trailing" constant="34" id="AkV-0f-jjD"/>
                             <constraint firstItem="8yd-tv-N28" firstAttribute="top" secondItem="PsH-yi-CeK" secondAttribute="bottom" constant="91" id="M0y-84-hLa"/>
+                            <constraint firstItem="3pt-Th-tvn" firstAttribute="trailing" secondItem="dsH-kQ-dRu" secondAttribute="trailing" constant="60" id="Mst-3E-jRL"/>
                             <constraint firstItem="Zl7-FL-7uv" firstAttribute="leading" secondItem="3pt-Th-tvn" secondAttribute="leading" constant="34" id="Nw9-ck-HWt"/>
                             <constraint firstItem="Zl7-FL-7uv" firstAttribute="top" secondItem="JD8-Rx-QrY" secondAttribute="bottom" constant="29" id="PnB-00-SnE"/>
                             <constraint firstItem="3pt-Th-tvn" firstAttribute="trailing" secondItem="PsH-yi-CeK" secondAttribute="trailing" constant="159" id="aYw-0W-e9C"/>
                             <constraint firstItem="Zl7-FL-7uv" firstAttribute="top" secondItem="3pt-Th-tvn" secondAttribute="top" constant="59" id="ccP-Pg-ANa"/>
+                            <constraint firstItem="dsH-kQ-dRu" firstAttribute="top" secondItem="PsH-yi-CeK" secondAttribute="bottom" constant="42" id="e4X-En-4Rp"/>
                             <constraint firstItem="3pt-Th-tvn" firstAttribute="trailing" secondItem="8yd-tv-N28" secondAttribute="trailing" constant="172" id="eFl-0y-EBH"/>
                             <constraint firstItem="PsH-yi-CeK" firstAttribute="top" secondItem="Zl7-FL-7uv" secondAttribute="bottom" constant="50" id="lBH-sC-PcJ"/>
                             <constraint firstItem="PsH-yi-CeK" firstAttribute="leading" secondItem="3pt-Th-tvn" secondAttribute="leading" constant="159" id="rbV-JA-a9z"/>
@@ -248,11 +257,12 @@
                     <connections>
                         <outlet property="answerLabel" destination="PsH-yi-CeK" id="fO5-tu-m05"/>
                         <outlet property="question" destination="Zl7-FL-7uv" id="ETZ-Nk-D3i"/>
+                        <outlet property="rightWrong" destination="dsH-kQ-dRu" id="LKd-bu-S8T"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qWF-RN-AjL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="948" y="-690"/>
+            <point key="canvasLocation" x="947.82608695652186" y="-690.48913043478262"/>
         </scene>
         <!--Quiz Result View Controller-->
         <scene sceneID="m4I-Cu-7YG">
@@ -306,6 +316,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="vQ3-nd-xAX"/>
+        <segue reference="MOm-2P-Ndf"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -12,7 +12,6 @@ class AnswerViewController: UIViewController {
     
     var questionVC2: QuestionViewController?
     var index: Int?
-    var questionSelect: Int?
     
     @IBAction func goToQuestions2(_ sender: Any) {
         
@@ -34,15 +33,18 @@ class AnswerViewController: UIViewController {
                 questionVC2.responseTwo.setTitle(QuizQuestions.questionData[index]["answerTwoQuestion2"], for: .normal)
                 questionVC2.responseThree.setTitle(QuizQuestions.questionData[index]["answerThreeQuestion2"], for: .normal)
                 questionVC2.responseFour.setTitle(QuizQuestions.questionData[index]["answerFourQuestion2"], for: .normal)
+        
                 
  
             }
             
-          
+            
+            
+            
             self.present(questionVC2, animated: true, completion: nil)
             
-                
         }
+            
         else if (questionNum == 2) {
             if let resultVC = storyboard!.instantiateViewController(withIdentifier: "result") as? QuizResultViewController {
                         
@@ -51,23 +53,31 @@ class AnswerViewController: UIViewController {
                 self.present(resultVC, animated: true, completion: nil)
             }
         }
-
-
     }
-
 }
     
+    @IBOutlet weak var rightWrong: UILabel!
     @IBOutlet weak var question: UILabel!
     @IBOutlet weak var answerLabel: UILabel!
     var correctAnswer: Int?
+    var questionSelect: Int?
     var questionNum: Int?
-    
     
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        if questionVC2?.questionSelect == 1 {
+            rightWrong.text = "You got it right!"
+            question.text = questionVC2?.questionOne.text
+            answerLabel.text = questionVC2?.responeOne.titleLabel?.text
+            
+        } else {
+            rightWrong.text = "You got it wrong!"
+            question.text = questionVC2?.questionOne.text
+            
+            answerLabel.text = questionVC2?.responeOne.titleLabel?.text
+        }
         
-
     }
 }
