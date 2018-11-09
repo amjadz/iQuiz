@@ -60,6 +60,14 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		584C528E21958823009BA652 /* Questions */ = {
+			isa = PBXGroup;
+			children = (
+				58A7E032218C0CB000055E32 /* QuizQuestions.swift */,
+			);
+			path = Questions;
+			sourceTree = "<group>";
+		};
 		5879B370218810B2007D85DB /* QuizQuestions */ = {
 			isa = PBXGroup;
 			children = (
@@ -113,6 +121,7 @@
 		58C53DBD218401190042E2E4 /* iQuiz */ = {
 			isa = PBXGroup;
 			children = (
+				584C528E21958823009BA652 /* Questions */,
 				584C528A21950F40009BA652 /* Models */,
 				5879B38221882D33007D85DB /* QuizTableController */,
 				5879B37921882C18007D85DB /* QuizResult */,
@@ -124,7 +133,6 @@
 				58C53DC52184011A0042E2E4 /* Assets.xcassets */,
 				58C53DC72184011A0042E2E4 /* LaunchScreen.storyboard */,
 				58C53DCA2184011A0042E2E4 /* Info.plist */,
-				58A7E032218C0CB000055E32 /* QuizQuestions.swift */,
 			);
 			path = iQuiz;
 			sourceTree = "<group>";

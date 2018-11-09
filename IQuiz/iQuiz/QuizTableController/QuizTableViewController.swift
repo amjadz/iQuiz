@@ -133,8 +133,8 @@ class QuizTableViewController: UITableViewController {
 
         let _ = questionVC.view
         
-//        questionVC.questionOne.text = json["questions"].stringValue
-//        questionVC.responeOne.setTitle(json[indexPath.row]["answerOne"], for: .normal)
+        questionVC.questionOne.text = QuizQuestions.questionData[indexPath.row]["title"]
+        questionVC.responeOne.setTitle(QuizQuestions.questionData[indexPath.row]["answerOne"], for: .normal)
         questionVC.responseTwo.setTitle(QuizQuestions.questionData[indexPath.row]["answerTwo"], for: .normal)
         questionVC.responseThree.setTitle(QuizQuestions.questionData[indexPath.row]["answerThree"], for: .normal)
         questionVC.responseFour.setTitle(QuizQuestions.questionData[indexPath.row]["answerFour"], for: .normal)

@@ -96,87 +96,98 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Who is Spiderman?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tIq-Gr-Q6P">
-                                <rect key="frame" x="54" y="80" width="307" height="16.333333333333329"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZY8-qY-PF9">
-                                <rect key="frame" x="128" y="266" width="64" height="30"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="10"/>
-                                <state key="normal" title="Logan"/>
-                                <connections>
-                                    <action selector="responseThree:" destination="mJe-Cb-Fsf" eventType="touchUpInside" id="yiN-8h-dZc"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vrt-Da-b68">
-                                <rect key="frame" x="128" y="188" width="52" height="30"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="10"/>
-                                <state key="normal" title="Peter"/>
-                                <connections>
-                                    <action selector="responseOne:" destination="mJe-Cb-Fsf" eventType="touchUpInside" id="9Eu-O0-d25"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="77S-vQ-lNv">
-                                <rect key="frame" x="228" y="188" width="48" height="30"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="10"/>
-                                <state key="normal" title="Reed"/>
-                                <connections>
-                                    <action selector="responseTwo:" destination="mJe-Cb-Fsf" eventType="touchUpInside" id="9GS-Pi-tOY"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vht-re-4JC">
-                                <rect key="frame" x="228" y="266" width="48" height="30"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="10"/>
-                                <state key="normal" title="Gwen"/>
-                                <connections>
-                                    <action selector="responseFour:" destination="mJe-Cb-Fsf" eventType="touchUpInside" id="y3y-5X-mif"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gxo-ue-C5E">
-                                <rect key="frame" x="116" y="341" width="183" height="30"/>
-                                <state key="normal" title="Submit"/>
-                                <connections>
-                                    <action selector="submitAnswer:" destination="mJe-Cb-Fsf" eventType="touchUpInside" id="Vuq-6x-GW0"/>
-                                    <segue destination="j2O-NJ-xDl" kind="show" identifier="theAnswer" id="MKT-32-EdX"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Txh-DN-uDZ">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Txh-DN-uDZ">
                                 <rect key="frame" x="26" y="20" width="34" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Back"/>
                                 <connections>
                                     <segue destination="Hmg-my-hQZ" kind="show" id="vQ3-nd-xAX"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dtf-AH-kHz">
+                                <rect key="frame" x="96" y="208" width="232" height="30"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Button">
+                                    <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="responseOne:" destination="mJe-Cb-Fsf" eventType="touchUpInside" id="hal-qw-VLC"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g1I-5c-hi3">
+                                <rect key="frame" x="96" y="310" width="232" height="30"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Button">
+                                    <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="responseThree:" destination="mJe-Cb-Fsf" eventType="touchUpInside" id="lzZ-nY-9Pm"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IAn-hL-hkw">
+                                <rect key="frame" x="96" y="368" width="232" height="30"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Button">
+                                    <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="responseFour:" destination="mJe-Cb-Fsf" eventType="touchUpInside" id="gxC-Bx-e9d"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MQz-sU-zR7">
+                                <rect key="frame" x="96" y="256" width="232" height="30"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Button">
+                                    <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="responseTwo:" destination="mJe-Cb-Fsf" eventType="touchUpInside" id="Oio-FO-vHH"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="leu-X7-9LO">
+                                <rect key="frame" x="96" y="149" width="232" height="30"/>
+                                <state key="normal" title="Submit"/>
+                                <connections>
+                                    <action selector="submitAnswer:" destination="mJe-Cb-Fsf" eventType="touchUpInside" id="VMJ-4I-NpY"/>
+                                    <segue destination="j2O-NJ-xDl" kind="show" identifier="theAnswer" id="nGQ-Ui-6qP"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Who is Spiderman?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tIq-Gr-Q6P">
+                                <rect key="frame" x="20" y="77" width="374" height="16"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="Vrt-Da-b68" firstAttribute="top" secondItem="tIq-Gr-Q6P" secondAttribute="bottom" constant="87" id="8G4-uv-qVJ"/>
-                            <constraint firstItem="tIq-Gr-Q6P" firstAttribute="top" secondItem="F8e-A2-Wwe" secondAttribute="top" constant="60" id="Ae2-pt-dhY"/>
-                            <constraint firstItem="ZY8-qY-PF9" firstAttribute="top" secondItem="Vrt-Da-b68" secondAttribute="bottom" constant="48" id="Hs9-f9-2HR"/>
-                            <constraint firstItem="Txh-DN-uDZ" firstAttribute="leading" secondItem="F8e-A2-Wwe" secondAttribute="leading" constant="26" id="Ndp-SH-WKS"/>
-                            <constraint firstItem="gxo-ue-C5E" firstAttribute="leading" secondItem="F8e-A2-Wwe" secondAttribute="leading" constant="116" id="Z1a-uM-8el"/>
-                            <constraint firstItem="tIq-Gr-Q6P" firstAttribute="top" secondItem="Txh-DN-uDZ" secondAttribute="bottom" constant="30" id="aE7-Hi-XLU"/>
-                            <constraint firstItem="Vrt-Da-b68" firstAttribute="leading" secondItem="F8e-A2-Wwe" secondAttribute="leading" constant="128" id="cJe-es-JT5"/>
-                            <constraint firstItem="ZY8-qY-PF9" firstAttribute="leading" secondItem="F8e-A2-Wwe" secondAttribute="leading" constant="128" id="fB4-VT-o3l"/>
-                            <constraint firstItem="Vht-re-4JC" firstAttribute="top" secondItem="77S-vQ-lNv" secondAttribute="bottom" constant="48" id="ft6-oJ-JIp"/>
-                            <constraint firstItem="F8e-A2-Wwe" firstAttribute="trailing" secondItem="tIq-Gr-Q6P" secondAttribute="trailing" constant="53" id="hrN-xa-W7b"/>
-                            <constraint firstItem="F8e-A2-Wwe" firstAttribute="trailing" secondItem="77S-vQ-lNv" secondAttribute="trailing" constant="138" id="sVr-bp-vLr"/>
-                            <constraint firstItem="77S-vQ-lNv" firstAttribute="top" secondItem="tIq-Gr-Q6P" secondAttribute="bottom" constant="87" id="wO7-gJ-t8U"/>
-                            <constraint firstItem="F8e-A2-Wwe" firstAttribute="trailing" secondItem="Vht-re-4JC" secondAttribute="trailing" constant="138" id="wQP-Mp-u3p"/>
-                            <constraint firstItem="F8e-A2-Wwe" firstAttribute="trailing" secondItem="gxo-ue-C5E" secondAttribute="trailing" constant="115" id="wuh-QP-rmb"/>
-                            <constraint firstItem="tIq-Gr-Q6P" firstAttribute="leading" secondItem="F8e-A2-Wwe" secondAttribute="leading" constant="54" id="y2H-lP-I3p"/>
-                            <constraint firstItem="gxo-ue-C5E" firstAttribute="top" secondItem="F8e-A2-Wwe" secondAttribute="top" constant="321" id="ztq-Iy-599"/>
+                            <constraint firstItem="g1I-5c-hi3" firstAttribute="leading" secondItem="F8e-A2-Wwe" secondAttribute="leading" constant="96" id="0mV-6q-QuG"/>
+                            <constraint firstItem="MQz-sU-zR7" firstAttribute="leading" secondItem="F8e-A2-Wwe" secondAttribute="leading" constant="96" id="6It-Bh-lkn"/>
+                            <constraint firstItem="tIq-Gr-Q6P" firstAttribute="leading" secondItem="F8e-A2-Wwe" secondAttribute="leading" constant="20" id="6Lp-nq-5op"/>
+                            <constraint firstItem="F8e-A2-Wwe" firstAttribute="trailing" secondItem="tIq-Gr-Q6P" secondAttribute="trailing" constant="20" id="ATN-K4-1Lb"/>
+                            <constraint firstItem="dtf-AH-kHz" firstAttribute="leading" secondItem="F8e-A2-Wwe" secondAttribute="leading" constant="96" id="KJw-9C-sdV"/>
+                            <constraint firstItem="F8e-A2-Wwe" firstAttribute="trailing" secondItem="MQz-sU-zR7" secondAttribute="trailing" constant="86" id="OVM-Zk-C5x"/>
+                            <constraint firstItem="F8e-A2-Wwe" firstAttribute="trailing" secondItem="g1I-5c-hi3" secondAttribute="trailing" constant="86" id="Ryb-HN-nfA"/>
+                            <constraint firstItem="tIq-Gr-Q6P" firstAttribute="top" secondItem="F8e-A2-Wwe" secondAttribute="top" constant="57" id="STU-lW-LPt"/>
+                            <constraint firstItem="F8e-A2-Wwe" firstAttribute="trailing" secondItem="dtf-AH-kHz" secondAttribute="trailing" constant="86" id="WG0-BY-4Dh"/>
+                            <constraint firstItem="dtf-AH-kHz" firstAttribute="top" secondItem="F8e-A2-Wwe" secondAttribute="top" constant="188" id="Z8c-CQ-yFE"/>
+                            <constraint firstItem="leu-X7-9LO" firstAttribute="leading" secondItem="F8e-A2-Wwe" secondAttribute="leading" constant="96" id="f0m-z3-PcL"/>
+                            <constraint firstItem="F8e-A2-Wwe" firstAttribute="trailing" secondItem="IAn-hL-hkw" secondAttribute="trailing" constant="86" id="hhk-0y-4Gx"/>
+                            <constraint firstItem="g1I-5c-hi3" firstAttribute="top" secondItem="F8e-A2-Wwe" secondAttribute="top" constant="290" id="mfE-Od-nfL"/>
+                            <constraint firstItem="MQz-sU-zR7" firstAttribute="top" secondItem="F8e-A2-Wwe" secondAttribute="top" constant="236" id="pqF-oD-7MO"/>
+                            <constraint firstItem="leu-X7-9LO" firstAttribute="top" secondItem="F8e-A2-Wwe" secondAttribute="top" constant="129" id="rdi-Ib-FhO"/>
+                            <constraint firstItem="IAn-hL-hkw" firstAttribute="top" secondItem="F8e-A2-Wwe" secondAttribute="top" constant="348" id="svC-k5-UNd"/>
+                            <constraint firstItem="IAn-hL-hkw" firstAttribute="leading" secondItem="F8e-A2-Wwe" secondAttribute="leading" constant="96" id="xuZ-vN-BD3"/>
+                            <constraint firstItem="F8e-A2-Wwe" firstAttribute="trailing" secondItem="leu-X7-9LO" secondAttribute="trailing" constant="86" id="y8B-Mf-Hbr"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="F8e-A2-Wwe"/>
                     </view>
                     <connections>
                         <outlet property="questionOne" destination="tIq-Gr-Q6P" id="38v-0J-4uU"/>
-                        <outlet property="responeOne" destination="Vrt-Da-b68" id="3uD-lX-NyA"/>
-                        <outlet property="responseFour" destination="Vht-re-4JC" id="aat-zy-Cax"/>
-                        <outlet property="responseThree" destination="ZY8-qY-PF9" id="Q1F-kd-wmB"/>
-                        <outlet property="responseTwo" destination="77S-vQ-lNv" id="8Nq-Km-QnV"/>
+                        <outlet property="responeOne" destination="dtf-AH-kHz" id="XX5-EV-GCi"/>
+                        <outlet property="responseFour" destination="IAn-hL-hkw" id="gkL-87-o3g"/>
+                        <outlet property="responseThree" destination="g1I-5c-hi3" id="eF8-b9-gk0"/>
+                        <outlet property="responseTwo" destination="MQz-sU-zR7" id="fZC-H6-ub7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QEq-9k-Ta0" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -295,6 +306,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="SRi-w6-V0c"/>
+        <segue reference="vQ3-nd-xAX"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -24,7 +24,7 @@ class QuestionViewController: UIViewController {
     
     @IBAction func responseOne(_ sender: Any) {
         questionSelect = 1
-        self.responeOne.tintColor = #colorLiteral(red: 0.4392156899, green: 0.01176470611, blue: 0.1921568662, alpha: 1)
+        self.responeOne.tintColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
         responseTwo.tintColor = #colorLiteral(red: 0, green: 0.4784313725, blue: 1, alpha: 1)
         responseThree.tintColor = #colorLiteral(red: 0, green: 0.4784313725, blue: 1, alpha: 1)
         responseFour.tintColor = #colorLiteral(red: 0, green: 0.4784313725, blue: 1, alpha: 1)
@@ -33,7 +33,7 @@ class QuestionViewController: UIViewController {
     
     @IBAction func responseTwo(_ sender: Any) {
         questionSelect = 2
-        self.responseTwo.tintColor = #colorLiteral(red: 0.4392156899, green: 0.01176470611, blue: 0.1921568662, alpha: 1)
+        self.responseTwo.tintColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
         responeOne.tintColor = #colorLiteral(red: 0, green: 0.4784313725, blue: 1, alpha: 1)
         responseThree.tintColor = #colorLiteral(red: 0, green: 0.4784313725, blue: 1, alpha: 1)
         responseFour.tintColor = #colorLiteral(red: 0, green: 0.4784313725, blue: 1, alpha: 1)
@@ -51,7 +51,7 @@ class QuestionViewController: UIViewController {
     
     @IBAction func responseFour(_ sender: Any) {
         questionSelect = 4
-        self.responseFour.tintColor = #colorLiteral(red: 0.4392156899, green: 0.01176470611, blue: 0.1921568662, alpha: 1)
+        self.responseFour.tintColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
         responeOne.tintColor = #colorLiteral(red: 0, green: 0.4784313725, blue: 1, alpha: 1)
         responseThree.tintColor = #colorLiteral(red: 0, green: 0.4784313725, blue: 1, alpha: 1)
         responseTwo.tintColor = #colorLiteral(red: 0, green: 0.4784313725, blue: 1, alpha: 1)
