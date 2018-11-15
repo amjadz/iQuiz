@@ -11,13 +11,14 @@ import UIKit
 class QuizResultViewController: UIViewController {
 
     @IBOutlet weak var scoreLabel: UILabel!
+    var correctAnswer: Int?
     
-    var string = ""
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        scoreLabel.text = string
         
+        
+//        scoreLabel.text? = String?(correctAnswer)
         
     }
 }

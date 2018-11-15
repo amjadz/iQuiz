@@ -11,7 +11,7 @@ import Alamofire
 
 class QuizTableViewController: UITableViewController {
     
-//    var userData: [Models] = []
+
     var url : String = ""
 
     var quizData = [
@@ -100,37 +100,16 @@ class QuizTableViewController: UITableViewController {
         self.present(alert, animated: true, completion: nil)
     }
     
-//    func addData(urlEntered: String) {
-//        let url = URL(urlEntered)
-//
-//        let getUrl = URLSession.shared.dataTask(with: url) { (data, response, error) in
-//            if error != nil {
-//               print(error!)
-//
-//
-//            }
-//            else {
-//                if urlContent = data {
-//                    do {
-//                        let jsonResult = try JSONSerialization.jsonObject(with: urlContent, options: JSONSerialization.ReadingOptions.mutableContainers) as AnyObject
-//                        self.parseJsonFile(JSON(jsonResult))
-//
-//                    } catch {
-//
-//                        print ("JSON Failed")
-//
-//                }
-//
-//            }
-//        }
-//    }
-    
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        
+        
+        
+        
         guard let questionVC = questionVC else {
             return
         }
         
-
         let _ = questionVC.view
         
         questionVC.questionOne.text = QuizQuestions.questionData[indexPath.row]["title"]
@@ -146,5 +125,15 @@ class QuizTableViewController: UITableViewController {
         self.present(questionVC, animated: true, completion: nil)
         
     }
-    
+//    @IBAction func refresh(_ sender: UIRefreshControl) {
+//        
+//        [_dataSource requestData: ^ {
+//            self
+//            
+//            
+//            
+//        }];
+//        
+//        
+//    }
 }

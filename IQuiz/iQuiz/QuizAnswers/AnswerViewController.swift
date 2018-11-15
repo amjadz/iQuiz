@@ -37,17 +37,16 @@ class AnswerViewController: UIViewController {
                 
  
             }
-            
-            
-            
-            
+        
             self.present(questionVC2, animated: true, completion: nil)
             
         }
             
         else if (questionNum == 2) {
             if let resultVC = storyboard!.instantiateViewController(withIdentifier: "result") as? QuizResultViewController {
-                        
+                
+                resultVC.correctAnswer = correctAnswer
+                
                 let _ = resultVC.view
                         
                 self.present(resultVC, animated: true, completion: nil)
@@ -66,17 +65,17 @@ class AnswerViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        question.text = questionVC2?.questionOne.text
+        answerLabel.text = questionVC2?.responeOne.titleLabel?.text
         
         if questionVC2?.questionSelect == 1 {
+            
             rightWrong.text = "You got it right!"
-            question.text = questionVC2?.questionOne.text
-            answerLabel.text = questionVC2?.responeOne.titleLabel?.text
-            
+
         } else {
-            rightWrong.text = "You got it wrong!"
-            question.text = questionVC2?.questionOne.text
             
-            answerLabel.text = questionVC2?.responeOne.titleLabel?.text
+            rightWrong.text = "You got it wrong!"
+            
         }
         
     }
