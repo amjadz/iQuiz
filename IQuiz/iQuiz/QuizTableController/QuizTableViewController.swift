@@ -102,10 +102,21 @@ class QuizTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
+        let Url = "http://tednewardsandbox.site44.com/questions.json"
         
-        
-        
-        
+        Alamofire.request(Url).responseJSON { response in
+            print("Request: \(String(describing: response.request))")   // original url request
+            print("Response: \(String(describing: response.response))") // http url response
+            print("Result: \(response.result)")                         // response serialization result
+            if let json = response.result.value {
+                print("JSON: \(json)") // serialized json response
+            }
+            
+            if let data = response.data, let utf8Text = String(data: data, encoding: .utf8) {
+                print("Data: \(utf8Text)") // original server data as UTF8 string
+            }
+        }
+
         guard let questionVC = questionVC else {
             return
         }
@@ -126,14 +137,14 @@ class QuizTableViewController: UITableViewController {
         
     }
 //    @IBAction func refresh(_ sender: UIRefreshControl) {
-//        
+//
 //        [_dataSource requestData: ^ {
 //            self
-//            
-//            
-//            
+//
+//
+//
 //        }];
-//        
-//        
+//
+//
 //    }
 }
