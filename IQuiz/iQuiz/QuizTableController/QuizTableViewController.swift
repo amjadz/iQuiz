@@ -6,8 +6,30 @@
 //  Copyright © 2018 Zubair Amjad. All rights reserved.
 //
 import UIKit
-import SwiftyJSON
+//import SwiftyJSON
 import Alamofire
+
+struct QuizDesc: Decodable {
+    let title: String
+    let desc: String
+    let questions: [Questions]
+    
+}
+
+struct Questions: Decodable {
+    let text: String
+    let answer: String
+    let answers: [Answers]
+    
+}
+
+struct Answers: Decodable {
+    let answerOne: String
+    let answerTwo: String
+    let answerThree: String
+    let answerFour: String
+    
+}
 
 class QuizTableViewController: UITableViewController {
     
@@ -91,7 +113,6 @@ class QuizTableViewController: UITableViewController {
         
         let getUrl : UIAlertAction = UIAlertAction(title: "Submit", style: .default, handler: { (action) -> Void in
                 self.url = (alert.textFields?.first?.text!)!
-//                self.getData((alert.textFields?.first?.text)!)
                 self.dismiss(animated: true, completion: nil)
         })
         alert.addAction(getUrl)
@@ -102,20 +123,29 @@ class QuizTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        let Url = "http://tednewardsandbox.site44.com/questions.json"
+        let jsonString = "http://tednewardsandbox.site44.com/questions.json"
         
-        Alamofire.request(Url).responseJSON { response in
-            print("Request: \(String(describing: response.request))")   // original url request
-            print("Response: \(String(describing: response.response))") // http url response
-            print("Result: \(response.result)")                         // response serialization result
-            if let json = response.result.value {
-                print("JSON: \(json)") // serialized json response
+        guard let url = URL(string: jsonString) else { return }
+        
+        URLSession.shared.dataTask(with: url) { (data, response, err) in
+            
+            guard let data = data else { return }
+            
+            do {
+                
+                let quizzes = try JSONDecoder().decode([QuizDesc].self, from: data)
+                
+                print(quizzes.description)
+
+                
+            } catch let jsonErr {
+                
+                print("Error", jsonErr)
             }
             
-            if let data = response.data, let utf8Text = String(data: data, encoding: .utf8) {
-                print("Data: \(utf8Text)") // original server data as UTF8 string
-            }
-        }
+        }.resume()
+       
+        
 
         guard let questionVC = questionVC else {
             return
@@ -129,22 +159,14 @@ class QuizTableViewController: UITableViewController {
         questionVC.responseThree.setTitle(QuizQuestions.questionData[indexPath.row]["answerThree"], for: .normal)
         questionVC.responseFour.setTitle(QuizQuestions.questionData[indexPath.row]["answerFour"], for: .normal)
 
-
         questionVC.questionNum = 1
         questionVC.index = indexPath.row 
         
         self.present(questionVC, animated: true, completion: nil)
         
     }
-//    @IBAction func refresh(_ sender: UIRefreshControl) {
-//
-//        [_dataSource requestData: ^ {
-//            self
-//
-//
-//
-//        }];
-//
-//
-//    }
+    @IBAction func refresh(_ sender: UIRefreshControl) {
+
+
+    }
 }
