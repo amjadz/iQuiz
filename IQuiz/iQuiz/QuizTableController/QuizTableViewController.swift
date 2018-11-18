@@ -6,8 +6,6 @@
 //  Copyright © 2018 Zubair Amjad. All rights reserved.
 //
 import UIKit
-//import SwiftyJSON
-//import Alamofire
 import SVProgressHUD
 
 struct QuizDesc: Codable, CustomStringConvertible {
@@ -33,27 +31,27 @@ struct Question: Codable {
 
 class QuizTableViewController: UITableViewController {
     
-
+    
     var url : String = ""
-
+    
     var quizData = [
         
         [
             "picture": #imageLiteral(resourceName: "rsz_superheroes2"),
             "category" : "Superheros",
             "description": "Superheros!",
-        ],
+            ],
         [
             "picture": #imageLiteral(resourceName: "tvshow"),
             "category" : "Tv Shows",
             "description" : "Breaking Bad!",
-        ],
+            ],
         [
             "picture": #imageLiteral(resourceName: "anime"),
             "category" : "Anime ",
             "description" : "Dragonball Z!",
-        ],
-    ]
+            ],
+        ]
     
     
     var questionVC : QuestionViewController?
@@ -63,7 +61,7 @@ class QuizTableViewController: UITableViewController {
         
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
-
+        
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
         
@@ -72,32 +70,32 @@ class QuizTableViewController: UITableViewController {
         questionVC = storyboard!.instantiateViewController(withIdentifier:"question") as? QuestionViewController
         
     }
-
+    
     // MARK: - Table view data source
-
+    
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
         return 1
     }
-
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
         return quizData.count
     }
-
+    
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! QuizCatagoryTableViewCell
-
+        
         SVProgressHUD.show()
         
         getData { quizTitleAndDesc in
-        SVProgressHUD.dismiss()
-        
-        DispatchQueue.main.async {
-            cell.catagoryLabel?.text = quizTitleAndDesc[indexPath.row].title
-            cell.descriptionLabel?.text = quizTitleAndDesc[indexPath.row].description
-            //        cell.catagoryPic?.image = charcater["picture"] as? UIImage
+            SVProgressHUD.dismiss()
+            
+            DispatchQueue.main.async {
+                cell.catagoryLabel?.text = quizTitleAndDesc[indexPath.row].title
+                cell.descriptionLabel?.text = quizTitleAndDesc[indexPath.row].description
+                //        cell.catagoryPic?.image = charcater["picture"] as? UIImage
             }
         }
         return cell
@@ -108,17 +106,17 @@ class QuizTableViewController: UITableViewController {
     }
     
     @IBAction func alertButton(_ sender: UIBarButtonItem) {
-       let alert =  UIAlertController.init(title: "Settings", message: "Download Quiz", preferredStyle: .alert)
+        let alert =  UIAlertController.init(title: "Settings", message: "Download Quiz", preferredStyle: .alert)
         
-       let normalAction = UIAlertAction(title: "Exit", style: .default, handler: nil)
+        let normalAction = UIAlertAction(title: "Exit", style: .default, handler: nil)
         
         alert.addTextField { (url: (UITextField?)) in
             url?.placeholder = "Enter url"
         }
         
         let getUrl : UIAlertAction = UIAlertAction(title: "Submit", style: .default, handler: { (action) -> Void in
-                self.url = (alert.textFields?.first?.text!)!
-                self.dismiss(animated: true, completion: nil)
+            self.url = (alert.textFields?.first?.text!)!
+            self.dismiss(animated: true, completion: nil)
         })
         alert.addAction(getUrl)
         alert.addAction(normalAction)
@@ -127,14 +125,14 @@ class QuizTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-
+        
         
         guard let questionVC = questionVC else {
             return
         }
-    
+        
         let _ = questionVC.view
-
+        
         SVProgressHUD.show()
         
         getData(completion: { quizDataResponse in
@@ -152,45 +150,55 @@ class QuizTableViewController: UITableViewController {
         
         
         
-
+        
         self.present(questionVC, animated: true, completion: nil)
         
     }
-//    @IBAction func refresh(_ sender: UIRefreshControl) {
+    
+    let pullToRefreshIsRunning: Bool = false
+
+    @IBAction func refresh(_ sender: UIRefreshControl) {
+        
+        getData { refreshData in
+            SVProgressHUD.dismiss()
+        }
+        
+        if pullToRefreshIsRunning == false {
+            SVProgressHUD.show()
+        }
+
+        sender.endRefreshing()
+        
+    }
+    
     func getData(completion: @escaping (([QuizDesc]) -> Void)) {
+        var quizzes: [QuizDesc]? = nil
         
+        let jsonString = "http://tednewardsandbox.site44.com/questions.json"
         
-        
-            var quizzes: [QuizDesc]? = nil
-
-            let jsonString = "http://tednewardsandbox.site44.com/questions.json"
-        
-            guard let url = URL(string: jsonString) else {
-                print("Unable to Convert String")
-                return
-
-            }
-            URLSession.shared.dataTask(with: url) { (data, response, err) in
-                Thread.sleep(forTimeInterval: 2.0)
-                print(url)
-                guard let data = data else {
-                    print("Data is nil")
-                    return
-                }
-
-                do {
-                    quizzes = try JSONDecoder().decode([QuizDesc].self, from: data)
-                    completion(quizzes!)
-                
-                } catch let jsonErr {
-                    print("Error", jsonErr)
-                    
-                }
-                
-
-                }.resume()
+        guard let url = URL(string: jsonString) else {
+            print("Unable to Convert String")
+            return
             
         }
-//    }
+        
+        URLSession.shared.dataTask(with: url) { (data, response, err) in
+            guard let data = data else {
+                print("Data is nil")
+                return
+            }
+            
+            do {
+                quizzes = try JSONDecoder().decode([QuizDesc].self, from: data)
+                completion(quizzes!)
+                
+            } catch let jsonErr {
+                print("Error", jsonErr)
+                
+            }
+            
+            }.resume()
+    }
     
 }
+

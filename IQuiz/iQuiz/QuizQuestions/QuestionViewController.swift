@@ -55,26 +55,26 @@ class QuestionViewController: UIViewController {
         responeOne.tintColor = #colorLiteral(red: 0, green: 0.4784313725, blue: 1, alpha: 1)
         responseThree.tintColor = #colorLiteral(red: 0, green: 0.4784313725, blue: 1, alpha: 1)
         responseTwo.tintColor = #colorLiteral(red: 0, green: 0.4784313725, blue: 1, alpha: 1)
-
+        
     }
     
     @IBAction func submitAnswer(_ sender: Any) {
         if questionSelect == 1 {
-    
+            
             correctAnswer = correctAnswer + 1
             
             performSegue(withIdentifier: "theAnswer", sender: self)
             
         } else {
             performSegue(withIdentifier: "theAnswer", sender: self)
-        
+            
             correctAnswer = correctAnswer + 0
         }
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
     }
     

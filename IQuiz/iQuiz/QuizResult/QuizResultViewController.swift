@@ -9,7 +9,7 @@
 import UIKit
 
 class QuizResultViewController: UIViewController {
-
+    
     @IBOutlet weak var scoreLabel: UILabel!
     var correctAnswer: Int?
     
@@ -18,7 +18,7 @@ class QuizResultViewController: UIViewController {
         super.viewDidLoad()
         
         
-//        scoreLabel.text? = String?(correctAnswer)
+        //        scoreLabel.text? = String?(correctAnswer)
         
     }
 }
