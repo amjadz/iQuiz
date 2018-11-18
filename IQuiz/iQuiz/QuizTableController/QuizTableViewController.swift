@@ -147,44 +147,39 @@ class QuizTableViewController: UITableViewController {
         self.present(questionVC, animated: true, completion: nil)
         
     }
-
-    func getData() -> [QuizDesc]? {
-        
-        var quizzes: [QuizDesc]?
-
-        let jsonString = "http://tednewardsandbox.site44.com/questions.json"
-    
-        guard let url = URL(string: jsonString) else {
-            print("Unable to Convert String")
-            return nil
-
-        }
-        URLSession.shared.dataTask(with: url) { (data, response, err) in
-
-            guard let data = data else {
-                print("Data is nil")
-                return
-            }
-
-            do {
-                quizzes = try JSONDecoder().decode([QuizDesc].self, from: data)
-                print(quizzes)
-            
-            } catch let jsonErr {
-                print("Error", jsonErr)
-            }
-            
-
-            }.resume()
-        
-        print(quizzes)
-        
-        return quizzes
-    }
-    
 //    @IBAction func refresh(_ sender: UIRefreshControl) {
-//
-//
+        func getData() -> [QuizDesc]? {
+            
+            var quizzes: [QuizDesc]? = nil
+
+            let jsonString = "http://tednewardsandbox.site44.com/questions.json"
+        
+            guard let url = URL(string: jsonString) else {
+                print("Unable to Convert String")
+                return nil
+
+            }
+            URLSession.shared.dataTask(with: url) { (data, response, err) in
+                guard let data = data else {
+                    print("Data is nil")
+                    return
+                }
+
+                do {
+                    quizzes = try JSONDecoder().decode([QuizDesc].self, from: data)
+                    print(quizzes)
+                
+                } catch let jsonErr {
+                    print("Error", jsonErr)
+                    
+                }
+                
+
+                }.resume()
+            
+            print(quizzes)
+            return quizzes
+        }
 //    }
     
 }
