@@ -8,6 +8,7 @@
 import UIKit
 //import SwiftyJSON
 //import Alamofire
+import SVProgressHUD
 
 struct QuizDesc: Codable, CustomStringConvertible {
     let title: String
@@ -128,38 +129,46 @@ class QuizTableViewController: UITableViewController {
             return
         }
     
-        
         let _ = questionVC.view
 
-        guard let quizQuestionsAndAnswers = getData() else {
-            print("Somebody touched my spagetii")
+        SVProgressHUD.show()
+        
+        getData(completion: { quizDataResponse in
+            SVProgressHUD.dismiss()
+            DispatchQueue.main.async {
+                questionVC.questionOne.text = quizDataResponse[indexPath.row].questions[0].text
+                questionVC.responeOne.setTitle(quizDataResponse[indexPath.row].questions[0].answers[0], for: .normal)
+                questionVC.responseTwo.setTitle(quizDataResponse[indexPath.row].questions[0].answers[1], for: .normal)
+                questionVC.responseThree.setTitle(quizDataResponse[indexPath.row].questions[0].answers[2], for: .normal)
+                questionVC.responseFour.setTitle(quizDataResponse[indexPath.row].questions[0].answers[3], for: .normal)
+                
+            }
             
-            return
-        }
+        })
         
-        print(quizQuestionsAndAnswers)
-        questionVC.questionOne.text = quizQuestionsAndAnswers[indexPath.row].questions[0].text
-        questionVC.responeOne.setTitle(quizQuestionsAndAnswers[indexPath.row].questions[0].answers[0], for: .normal)
-        questionVC.responseTwo.setTitle(quizQuestionsAndAnswers[indexPath.row].questions[0].answers[1], for: .normal)
-        questionVC.responseThree.setTitle(quizQuestionsAndAnswers[indexPath.row].questions[0].answers[2], for: .normal)
-        questionVC.responseFour.setTitle(quizQuestionsAndAnswers[indexPath.row].questions[0].answers[3], for: .normal)
         
+        
+
         self.present(questionVC, animated: true, completion: nil)
         
     }
 //    @IBAction func refresh(_ sender: UIRefreshControl) {
-        func getData() -> [QuizDesc]? {
-            
+    func getData(completion: @escaping (([QuizDesc]) -> Void)) {
+        
+        
+        
             var quizzes: [QuizDesc]? = nil
 
             let jsonString = "http://tednewardsandbox.site44.com/questions.json"
         
             guard let url = URL(string: jsonString) else {
                 print("Unable to Convert String")
-                return nil
+                return
 
             }
             URLSession.shared.dataTask(with: url) { (data, response, err) in
+                Thread.sleep(forTimeInterval: 2.0)
+                print(url)
                 guard let data = data else {
                     print("Data is nil")
                     return
@@ -167,7 +176,7 @@ class QuizTableViewController: UITableViewController {
 
                 do {
                     quizzes = try JSONDecoder().decode([QuizDesc].self, from: data)
-                    print(quizzes)
+                    completion(quizzes!)
                 
                 } catch let jsonErr {
                     print("Error", jsonErr)
@@ -177,8 +186,6 @@ class QuizTableViewController: UITableViewController {
 
                 }.resume()
             
-            print(quizzes)
-            return quizzes
         }
 //    }
     
