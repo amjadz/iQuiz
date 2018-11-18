@@ -89,13 +89,17 @@ class QuizTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! QuizCatagoryTableViewCell
 
+        SVProgressHUD.show()
         
-//        let charcater = [indexPath.row]
-//
-//        cell.catagoryLabel?.text = charcater["category"] as? String
-//        cell.descriptionLabel?.text = charcater["description"] as? String
-//        cell.catagoryPic?.image = charcater["picture"] as? UIImage
-//
+        getData { quizTitleAndDesc in
+        SVProgressHUD.dismiss()
+        
+        DispatchQueue.main.async {
+            cell.catagoryLabel?.text = quizTitleAndDesc[indexPath.row].title
+            cell.descriptionLabel?.text = quizTitleAndDesc[indexPath.row].description
+            //        cell.catagoryPic?.image = charcater["picture"] as? UIImage
+            }
+        }
         return cell
     }
     
