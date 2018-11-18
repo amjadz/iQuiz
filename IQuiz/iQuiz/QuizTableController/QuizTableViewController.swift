@@ -33,6 +33,7 @@ class QuizTableViewController: UITableViewController {
     
     
     var url : String = ""
+    var timer: Timer!
     
     var quizData = [
         
@@ -66,6 +67,11 @@ class QuizTableViewController: UITableViewController {
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
         
         // Get Reference to VC Quiz question
+        
+        
+        timer = Timer.scheduledTimer(timeInterval: 30.0, target: self, selector: #selector(refreshEveryThirtySec), userInfo: nil, repeats: true)
+        
+        refreshEveryThirtySec()
         
         questionVC = storyboard!.instantiateViewController(withIdentifier:"question") as? QuestionViewController
         
@@ -200,5 +206,11 @@ class QuizTableViewController: UITableViewController {
             }.resume()
     }
     
+    @objc func refreshEveryThirtySec() {
+        SVProgressHUD.show()
+        getData { (autoRefresh) in
+            SVProgressHUD.dismiss()
+        }
+    }
+    
 }
-
