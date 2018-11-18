@@ -28,6 +28,7 @@ class AnswerViewController: UIViewController {
             if questionNum != nil {
                 questionVC2.questionNum = questionNum! + 1
                 questionVC2.index = index
+                
                 questionVC2.questionOne.text = QuizQuestions.questionData[index]["titleQuestion2"]
                 questionVC2.responeOne.setTitle(QuizQuestions.questionData[index]["answerOneQuestion2"], for: .normal)
                 questionVC2.responseTwo.setTitle(QuizQuestions.questionData[index]["answerTwoQuestion2"], for: .normal)
