@@ -7,6 +7,7 @@
 //
 import UIKit
 import SVProgressHUD
+import Reachability
 
 struct QuizDesc: Codable, CustomStringConvertible {
     let title: String
@@ -60,15 +61,6 @@ class QuizTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-        
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
-        
-        // Get Reference to VC Quiz question
-        
-        
         timer = Timer.scheduledTimer(timeInterval: 30.0, target: self, selector: #selector(refreshEveryThirtySec), userInfo: nil, repeats: true)
         
         refreshEveryThirtySec()
@@ -94,7 +86,7 @@ class QuizTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! QuizCatagoryTableViewCell
         
         SVProgressHUD.show()
-        
+
         getData { quizTitleAndDesc in
             SVProgressHUD.dismiss()
             
@@ -154,15 +146,12 @@ class QuizTableViewController: UITableViewController {
             
         })
         
-        
-        
-        
         self.present(questionVC, animated: true, completion: nil)
         
     }
     
     let pullToRefreshIsRunning: Bool = false
-
+    
     @IBAction func refresh(_ sender: UIRefreshControl) {
         
         getData { refreshData in
@@ -172,12 +161,13 @@ class QuizTableViewController: UITableViewController {
         if pullToRefreshIsRunning == false {
             SVProgressHUD.show()
         }
-
+        
         sender.endRefreshing()
         
     }
     
     func getData(completion: @escaping (([QuizDesc]) -> Void)) {
+        
         var quizzes: [QuizDesc]? = nil
         
         let jsonString = "http://tednewardsandbox.site44.com/questions.json"
@@ -213,4 +203,22 @@ class QuizTableViewController: UITableViewController {
         }
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        connection()
+
+    }
+    
+    func connection()  {
+        let reach = Reachability()!
+        
+        if reach.connection == .none{
+            let alert =  UIAlertController.init(title: "No Connection", message: "Not Connected", preferredStyle: .alert)
+            
+            alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
+            
+            present(alert, animated: true, completion: nil)
+            SVProgressHUD.dismiss()
+
+        }
+    }
 }

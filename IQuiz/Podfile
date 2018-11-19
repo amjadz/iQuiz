@@ -3,8 +3,6 @@
 
 target 'iQuiz' do
   use_frameworks!
-    pod 'SwiftyJSON', '~> 4.0'
-    pod 'Alamofire', '~> 4.7'
     pod 'SVProgressHUD'
-
+    pod 'ReachabilitySwift'
 end
