@@ -177,6 +177,7 @@ class QuizTableViewController: UITableViewController {
             return
             
         }
+    
         
         URLSession.shared.dataTask(with: url) { (data, response, err) in
             guard let data = data else {
@@ -186,11 +187,19 @@ class QuizTableViewController: UITableViewController {
             
             do {
                 quizzes = try JSONDecoder().decode([QuizDesc].self, from: data)
+                
+                  // crashes app while trying to save data
+//                let savedData = UserDefaults.standard.set(quizzes, forKey: "quizData")
+//                print(savedData)
+                
                 completion(quizzes!)
                 
             } catch let jsonErr {
-                print("Error", jsonErr)
+                let alert =  UIAlertController.init(title: "Error Downloading JSON", message: jsonErr as? String, preferredStyle: .alert)
                 
+                alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
+                
+                self.present(alert, animated: true, completion: nil)
             }
             
             }.resume()
